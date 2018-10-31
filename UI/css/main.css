@@ -230,7 +230,12 @@ nav {
   text-align: end;
   cursor: pointer;
 }
+.new{
+  color:#7b1fa2;
+  align-content: center;
+  text-align: center;
 
+}
 
 
 .button{
