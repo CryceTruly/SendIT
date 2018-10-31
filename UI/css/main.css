@@ -22,9 +22,10 @@ a {
 
 /* Footer */
 footer .footer-bottom {
-  background: #333;
+  background: #7b1fa2;
   padding: 1rem;
   color: #fff;
+  margin-top: 155px;
 }
 
 /* Utility Classes */
@@ -131,6 +132,14 @@ nav li:hover {
 }
 
 @media screen and (max-width: 580px) {
+  .loginform{
+    width:90%;
+    border:1px solid gainsboro;
+    padding: 21px;
+    margin: 21px;
+    text-align: left;
+    margin-left: 10%;
+  }
   .hide-on-small {
     display: none;
   }
@@ -209,8 +218,17 @@ nav {
 }
 
 .loginform{
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+  width:50%;
+  border:1px solid gainsboro;
+  padding: 21px;
+  margin: 21px;
+  text-align: left;
+  margin-left: 26%;
+}
+
+#fgtp{
+  text-align: end;
+  cursor: pointer;
 }
 
 
@@ -223,7 +241,7 @@ nav {
 }
 
 .button:hover{
-	background:red;
+	background:purple;
 	color:#fff;
 }
 
