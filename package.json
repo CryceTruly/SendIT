@@ -1,0 +1,25 @@
+{
+  "name": "sendit",
+  "version": "1.0.0",
+  "description": "An courier service application ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy":"gh-pages -d UI"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CryceTruly/SendIT.git"
+  },
+  "keywords": [
+    "Andela",
+    "bootcamp"
+  ],
+  "author": "Cryce Truly",
+  "license": "MIT",
+"homepage":"https://CryceTruly.github.io//SendIT",
+  "bugs": {
+    "url": "https://github.com/CryceTruly/SendIT/issues"
+  },
+  "homepage": "https://github.com/CryceTruly/SendIT#readme"
+}
