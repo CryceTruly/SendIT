@@ -212,7 +212,7 @@ nav {
 
 
 
-.my-form input[type="password"], .my-form input[type="email"]{
+.my-form input[type="password"], .my-form input[type="email"],.my-form input[type="text"]{
 	padding:8px;
 	width:100%;
 }
