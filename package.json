@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy":"gh-pages -d UI"
+    "deploy": "gh-pages -d UI"
   },
   "repository": {
     "type": "git",
@@ -17,9 +17,11 @@
   ],
   "author": "Cryce Truly",
   "license": "MIT",
-"homepage":"https://CryceTruly.github.io//SendIT",
+  "homepage": "https://github.com/CryceTruly/SendIT#readme",
   "bugs": {
     "url": "https://github.com/CryceTruly/SendIT/issues"
   },
-  "homepage": "https://github.com/CryceTruly/SendIT#readme"
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
