@@ -5,4 +5,4 @@ menulink.addEventListener('click',(e)=>{
     console.log('clicked');
     menu.classList.toggle('showing');
 e.preventDefault();
-})
+});

@@ -186,8 +186,10 @@ nav {
 .new{
   color:#7b1fa2;
   align-content: center;
+  text-indent: 30px;
   text-align: center;
-
+  margin-left: 21px;
+font-weight: bold;
 }
 
 
