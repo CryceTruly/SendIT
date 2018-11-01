@@ -10,25 +10,24 @@
 </head>
 <body>
         <header>
-
-                <nav class='cf'>
-                  <ul class='cf'>
-                    
-                    <li>
-                      <a href='login.html'>Sign In</a>
-                    </li>
-                    <li>
-                      <a href='register.html'>Register</a>
-                    </li>
-                    <li>
-                      <a href='profile.html'>My Profile</a>
-                    </li>
-                    <li class="active">
-                      <a href='createorder.html'>Create Order</a>
-                    </li>
-                  </ul>
-                  <a href='index.html' id='openup'>SendIT</a>
-                </nav>
+          <nav class='cf'>
+            <ul class='cf' id="menu">
+              <li>
+                <a href='login.html'>Sign In</a>
+              </li>
+              <li>
+                <a href='register.html'>Register</a>
+              </li>
+              <li>
+                <a href='profile.html'>My Profile</a>
+              </li>
+              <li class="active">
+                <a href='createorder.html'>Create Order</a>
+              </li>
+            </ul>
+            <a href='index.html' id='menushow'>SendIT</a>
+          </nav>
+               
               </header>
               <!-- The main area -->
 <div class="container">
@@ -36,29 +35,26 @@
 
 
         <form class="my-form">
-                <h3>Create an Account</h3>
+                <h3>Make an order</h3>
                 <div class="form-group">
-                    <label>FirstName: </label>
-                    <input type="text" name="fname">
+                    <label>Pick Up Location: </label>
+                    <input type="text" name="pul">
                 </div>
                 <div class="form-group">
-                    <label>LastName: </label>
-                    <input type="text" name="lname">
+                    <label>Destination: </label>
+                    <input type="text" name="dest">
                 </div>
                 <div class="form-group">
-                    <label>Email: </label>
-                    <input type="email" name="email">
+                    <label>Parcel Weight (grams): </label>
+                    <input type="number" name="weight">
                 </div>
                 <div class="form-group">
-                    <label>UserName: </label>
-                    <input type="text" name="username">
-                </div>
-                <div class="form-group">
-                    <label>Password: </label>
-                    <input type="password" name="password">
+                    <label>Comments: </label>
+                    <textarea  name="comments" placeholder=""></textarea>
                 </div>
                
-                <input class="button" type="submit" value="Register" name="">
+               
+                <input class="button" type="submit" value="Submit" name="">
             </form>
     
      
