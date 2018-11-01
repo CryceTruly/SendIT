@@ -243,3 +243,78 @@ font-weight: bold;
   top:0;
   height: 100%;
 }
+
+/* `admin p`age */
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*tables*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    overflow-x:auto;
+}
+
+th, td {
+    text-align: left;
+    padding: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+thead{
+  background: #7b1fa2;
+  color: #fff;
+}
+
+#db{
+  height: 50px;
+  text-align: center;
+  padding-top: 10px;
+  margin: auto;
+    background-color: #eee;
+}
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+
+/*d`asqhbord*/
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.card > .container {
+    padding: 2px 16px;
+}
+
+.card{
+  display: grid;
+  float: left;
+  grid-template-areas: 1fr 1fr 1fr 1fr 1fr ;
+  grid-gap: 21px;
+}
