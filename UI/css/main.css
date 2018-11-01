@@ -165,9 +165,13 @@ nav {
 
 
 
-.my-form input[type="password"],.my-form input[type="number"],.my-form textarea, .my-form input[type="email"],.my-form input[type="text"]{
+.my-form input[type="password"],select,.my-form input[type="number"],.my-form textarea, .my-form input[type="email"],.my-form input[type="text"]{
 	padding:8px;
 	width:100%;
+}
+
+option{
+  padding: 12px;
 }
 
 .loginform{
