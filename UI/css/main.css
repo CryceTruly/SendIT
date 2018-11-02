@@ -1,8 +1,9 @@
 
 body {
-  font-family: 'PT Sans', sans-serif;
+    font-family: 'Consolas', sans-serif;
   margin: 0;
   line-height: 1.6;
+    background: #ffffff;
 }
 
 
@@ -42,12 +43,6 @@ footer .footer-bottom {
     /* border: 1px solid #fff; */
 }
 
-/* Buttons */
-.btn {
-  padding: 1rem;
-  color: #fff;
-  display: inline-block;
-}
 /* Navigation */
 nav {
   height: 40px;
@@ -70,7 +65,6 @@ nav a {
   text-decoration: none;
   padding: 8px 0;
   color: #eee;
-  text-decoration: none;
 }
 nav li:hover {
   background-color: #7b1fa2;
@@ -81,7 +75,19 @@ nav li:hover {
 }
 
 @media screen and (max-width: 558px) {
-  
+    .first {
+        display: none;
+    }
+
+    .second {
+        display: inline-block;
+    }
+
+    .loginform {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 .left{
 float: unset;
 text-align: center;
@@ -163,11 +169,12 @@ nav {
 	padding-bottom:15px;
 }
 
-
-
-.my-form input[type="password"],.my-form input[type="number"],.my-form textarea, .my-form input[type="email"],.my-form input[type="text"]{
-	padding:8px;
+.my-form input[type="password"], .my-form input[type="number"], .my-form textarea, select, .my-form input[type="email"], .my-form input[type="text"] {
 	width:100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
 }
 
 .loginform{
@@ -198,6 +205,8 @@ font-weight: bold;
 	color:#fff;
 	padding:10px 15px;
 	border:none;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .button:hover{
@@ -210,15 +219,6 @@ font-weight: bold;
 }
 
 /* PROFILEP`AGE */
-
-.main{
-  display: grid;
-  grid-template-columns: 70%,30%;
-  grid-gap: 1rem;
- 
-  padding: 10px;
-  margin: 10px;
-}
 
 .left{
  float: left;
@@ -315,6 +315,25 @@ thead{
 .card{
   display: grid;
   float: left;
-  grid-template-areas: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-areas: inherit;
   grid-gap: 21px;
+}
+
+.btn-info {
+    background: #7b1fa2;
+}
+
+/*details*/
+
+.oneleft {
+    line-height: normal;
+    text-align: left;
+}
+
+.oneleft h4 {
+    margin-bottom: 0;
+}
+
+.oneleft p {
+    margin-top: 0;
 }
