@@ -6,3 +6,9 @@ menulink.addEventListener('click',(e)=>{
     menu.classList.toggle('showing');
 e.preventDefault();
 });
+
+// bodywidth=document.body.clientWidth;
+// if(bodywidth<=535){
+//     menulink.addEventListener('click',function(){
+//         document.location='index.html';
+//     })
