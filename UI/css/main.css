@@ -169,7 +169,7 @@ nav {
 	padding-bottom:15px;
 }
 
-.my-form input[type="password"], .my-form input[type="number"], .my-form textarea, select, .my-form input[type="email"], .my-form input[type="text"] {
+.my-form input[type="password"], .my-form input[type="number"],.my-form input[type="tel"], .my-form textarea, select, .my-form input[type="email"], .my-form input[type="text"] {
 	width:100%;
     padding: 16px 20px;
     border: none;
@@ -184,6 +184,31 @@ nav {
   margin: 21px;
   text-align: left;
   margin-left: 26%;
+}
+
+/* form on mobile */
+
+@media screen and (max-width: 558px){
+
+.container{
+  padding: 0;
+  margin: 5px;
+
+}
+  
+.loginform{
+    width:85%;
+    margin-left: 0;
+    border:1px solid gainsboro;
+    text-align: left;
+   
+  }
+  #fgtp{
+  display: none;
+  }
+  .new{
+    content: 'Create an account';
+  }
 }
 
 #fgtp{
@@ -428,4 +453,8 @@ footer .footer-bottom {
 
 
 
+/* fix responsive profile table */
 
+.orders{
+  overflow:auto;
+}
