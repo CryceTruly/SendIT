@@ -2,10 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Edit Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Account:Edit Profile</title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
+        <header>
 
+                <nav class='cf'>
+                  <ul class='cf' id="menu">
+                    
+                    <li>
+                      <a href='login.html'>Sign In</a>
+                    </li>
+                    <li class="active">
+                      <a href='register.html'>Register</a>
+                    </li>
+                    <li>
+                      <a href='profile.html'>My Profile</a>
+                    </li>
+                    <li>
+                      <a href='createorder.html'>Create Order</a>
+                    </li>
+                  </ul>
+                  <a href='index.html' id='menushow'>SendIT</a>
+                </nav>
+              </header>
+              <!-- The main area -->
+<div class="container">
+  <div class="loginform">
+
+
+        <form class="my-form">
+                <h3>Update Profile Info</h3>
+                <div class="form-group">
+                    <label>FullName:* </label>
+                    <input type="text" name="fname" value="Cryce Truly">
+                </div>
+                
+                <div class="form-group">
+                    <label>Email:* </label>
+                    <input type="email" name="email" value="crycetruly@gmail.com">
+                </div>
+                 
+                <div class="form-group">
+                  <label>Contact Phone:* </label>
+                  <input type="tel" name="tel" value="+2567566665">
+              </div>
+                 
+              <div class="form-group">
+                <label>Profile Picture </label><br>
+                <input type="file" name="profilepic" accept="image/*">
+            </div>
+             
+               
+                <input class="button" type="submit" value="Continue" name="">
+            </form>
+          
+     
+      
+  </div> 
+  
+
+</div>
+
+     <!-- Footer -->
+  <footer>
+      
+        <div class="footer-bottom text-center">
+          Copyright &copy; 2018 SendIT
+      </div>
+      </footer>
+      <script src="js/main.js"></script>
 </body>
 </html>
