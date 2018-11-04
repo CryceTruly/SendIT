@@ -18,7 +18,7 @@ footer .footer-bottom {
   background: #7b1fa2;
   padding: 1rem;
   color: #fff;
-  margin-top: 155px;
+
 }
 
 /* Utility Classes */
@@ -337,3 +337,95 @@ thead{
 .oneleft p {
     margin-top: 0;
 }
+
+
+
+#content{
+  padding:4em;
+  padding-left: 40PX;
+}
+#content > h1{
+  margin: 0;
+  font-weight:800;
+  font-size: 5em;
+  text-transform: uppercase;
+
+
+}
+
+#content > p{
+  margin-top: 0;
+  font-size: 1.5em;
+
+}
+.btnl{
+  background: rgb(202, 143, 34);
+    color: #fff;
+  padding: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1.2em;
+  margin-bottom: 1em;
+  text-indent: 0px;
+  margin-left: 111px;
+}
+
+#hero{
+ text-indent: 111px;
+ /*
+background-image: 
+url('https://us.123rf.com/450wm/sabelskaya/sabelskaya1706/sabelskaya170600340/80246099-young-man-working-as-courier-delivering-goods-parcel-boxes-cartoon-vector-illustration-isolated-on-w.jpg?ver=6'); */
+background-size: cover;
+height: 300px; 
+background-position: center;
+}
+@media(max-width:500px){
+  #hero{
+    text-indent: 51px;
+   background-image: url('https://us.123rf.com/450wm/sabelskaya/sabelskaya1706/sabelskaya170600340/80246099-young-man-working-as-courier-delivering-goods-parcel-boxes-cartoon-vector-illustration-isolated-on-w.jpg?ver=6'); 
+   background-size: cover;
+   height: 200px; 
+   background-position: center;
+   }
+}
+/* footer */
+footer{
+  position: relative;
+  background: #7b1fa2;
+  margin-top: 155px;
+}
+
+/* Footer */
+footer .footer-cols {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+  text-align: left;
+  font-size: 14px;
+  
+}
+footer{
+  color:#fff;
+}
+footer .footer-cols ul {
+  list-style: none;
+}
+
+footer .footer-cols ul li:first-child {
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: #444 solid 1px;
+  margin-bottom: 1rem;
+}
+
+footer .footer-bottom {
+  padding: 1rem;
+}
+
+
+
+
+
