@@ -4,7 +4,7 @@ SendIT charges based on weight of the parcels
 
 ---
 ## Live UI website
-[SendIT UI](https://www.crycetruly.github.io/SendIT "SendIT UI Pages")
+[SendIT UI](https://crycetruly.github.io/SendIT/ "SendIT UI Pages")
 
 ## Contribute to the UI design
 ```
