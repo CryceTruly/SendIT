@@ -7,49 +7,40 @@
     <title>Send it|Login</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-   
+    
 </head>
 <body>
-        <header>
-
-          <nav class='cf'>
-              <a href='index.html' id='menushow'>SendIT</a>
-            <ul class='cf' id="menu">
-              <li class="active">
-                <a href='login.html'>Sign In</a>
-              </li>
-              <li>
-                <a href='register.html'>Register</a>
-              </li>
-              <li>
-                <a href='profile.html'>My Profile</a>
-              </li>
-              <li>
-                <a href='createorder.html'>Create Order</a>
-              </li>
-            </ul>
-          
-          </nav>
-              </header>
               <!-- The main area -->
 <div class="container">
+  <div class="upperlogin">
+      <img src="img/logo.png" height="70" alt="" srcset="">
+      <h3>Login to SendIT</h3>
+  </div>
+  
   <div class="loginform">
 
 
         <form class="my-form">
-                <h3>Login to your Account</h3>
+          <ul id="errors"></ul>
                 <div class="form-group">
                     <label for="em">Email: </label>
-                    <input id="em" type="email" name="email">
+                    <input type="email" name="email" id="email" minlength="5" required>
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Password: </label>
-                    <input type="password" name="password" id="pwd">
+                    <label for="pwd">Password:</label>  <span id="fgtp">Forgot password?</span>
+                    <input type="password" name="password" id="password" minlength="5" required>
                 </div>
-                <p id="fgtp">Forgot password?</p>
-                <input class="button" type="submit" value="Submit" name="">
+                
+                <input class="button signinbtn" id="login" type="submit" value="Login" name="">
             </form>
-      <a class="new" href="register.html">Dont have an account create one</a>
+            <div class="container">
+                <div class="form-group">
+                    <label for="pwd">New To SendIT?</label>  <span id="fgtp" class="secondary-btn"><strong>
+
+                    <a href="register.html"></a> Create an account</span></strong>
+                   
+                </div>
+            
   </div> 
   
 
