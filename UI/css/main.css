@@ -175,11 +175,35 @@ select,
 .my-form input[type="email"],
 .my-form input[type="text"] {
 	width: 100%;
-	padding: 16px 20px;
-	border: none;
+	border-bottom: 20px;
+	border: 1px solid gainsboro;
 	border-radius: 4px;
-	background-color: #f1f1f1;
+	padding-top: 12px;
+	text-align: left; 
+	padding-bottom: 12px;
 }
+label{
+	font-weight: 600;
+	display: block;
+	margin-bottom: 3px;
+	float: left;
+}
+
+.signinbtn{
+	width: 100%;
+	padding: 0.7rem 1rem;
+  height: 2.7rem;
+  display: block;
+  border: 0;
+  border-radius: 2px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.5s;
+}
+  
 
 option{
 	padding: 50px;
@@ -187,12 +211,13 @@ option{
 }
 
 .loginform {
-	width: 50%;
+	width: 30%;
 	border: 1px solid gainsboro;
-	padding: 21px;
-	margin: 21px;
+	padding: 30px;
+	margin: auto;
+	padding-bottom: 70px;
 	text-align: left;
-	margin-left: 26%;
+
 }
 
 /* form on mobile */
@@ -240,8 +265,13 @@ option{
 }
 
 #fgtp {
-	text-align: end;
+	float: right;
+	font-size: 14px;
+	color: #0366d6;
+    text-decoration: none;
 	cursor: pointer;
+	margin-top: 3px;
+
 }
 .new {
 	color: #7b1fa2;
@@ -491,3 +521,54 @@ footer .footer-bottom {
 	font-weight: 800;
 	text-emphasis: bold;
 }
+
+
+.upperlogin{
+	margin-top: 4%;
+}
+
+
+ul {
+    /* Remove default list styling */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    border: 1px solid #ddd; 
+    margin-top: -1px; 
+    background-color: rgb(228, 117, 117);
+    padding: 12px; 
+    text-decoration: none; 
+    font-size: 18px; 
+    color: white;
+    display: block; 
+}
+
+/* spinner stuff */
+
+  /* Spinner 2 */
+  .spinner-1:before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: -30px;
+    margin-left: -30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-top-color: coral;
+    border-bottom-color: coral;
+    animation: spinner 0.7s ease infinite;
+  }
+  
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
