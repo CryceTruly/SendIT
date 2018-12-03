@@ -189,7 +189,7 @@ label{
 	float: left;
 }
 
-.signinbtn{
+.signinbtn,.button{
 	width: 100%;
 	padding: 0.7rem 1rem;
   height: 2.7rem;
@@ -274,12 +274,13 @@ option{
 
 }
 .new {
-	color: #7b1fa2;
-	align-content: center;
-	text-indent: 30px;
-	text-align: center;
-	margin-left: 2%;
 	font-weight: bold;
+	text-align: center;
+	font-size: 14px;
+	color: #0366d6;
+    text-decoration: none;
+	cursor: pointer;
+	margin:auto;
 }
 
 .button {
