@@ -57,7 +57,7 @@ function startLogin(data) {
         .then(jsondata => {
             document.querySelector("body").classList.remove("spinner-1");
             if (jsondata['auth_token']) {
-                saveToken(jsondata['auth_token'])
+                saveToken(jsondata['auth_token'],true)
                 document.location.href = 'index.html';
 
             } else {
@@ -76,7 +76,7 @@ function startLogin(data) {
 function display_erors(err) {
     err.toLowerCase();
     erroutput.innerHTML += `
-    <li>${err}</li>
+    <li class="errlist">${err}</li>
     `
 }
 
@@ -87,8 +87,9 @@ function clear_errors() {
 
 }
 
-function saveToken(token) {
+function saveToken(token,is_admin) {
     localStorage.setItem('_token', token)
+    localStorage.setItem('is_admin',is_admin)
 
 
 }
