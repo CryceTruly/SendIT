@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:5000/api/v2/"
+const baseURL = "https://trulysendit.herokuapp.com/api/v2/"
 
 const erroutput = document.querySelector('#errors')
 let btn = document.querySelector('#register');
@@ -78,13 +78,11 @@ function startSignUp(data) {
             ).catch(err=>console.log(err)            )
         .then(jsondata => {
             document.querySelector("body").classList.remove("spinner-1");
-            if (jsondata['Success']) {
+            console.log(jsondata);
+            
+            if (jsondata['status']==='Success') {
                 
-                document.location.href='/login.html'
-             
-             
-               
-
+                document.location.href=`login.html?message=${+ encodeURIComponent(jsondata['message'])}`
             } else {
                 display_erors(jsondata['message'])
                 setTimeout(() => {
