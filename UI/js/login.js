@@ -1,5 +1,22 @@
-const baseURL = "https://trulysendit.herokuapp.com/api/v2/"
+if(localStorage.getItem('_token')!=null){
+    document.location.href='index.html';
+ }
+ const baseURL = "https://trulysendit.herokuapp.com/api/v2/"
 const erroutput = document.querySelector('#errors')
+
+ const urlParams = new URLSearchParams(window.location.search);
+ const current_item=urlParams.get('message');
+ console.log(current_item);
+ 
+ display_erors(current_item);
+
+
+
+
+
+
+
+
 let btn = document.querySelector('#login');
 btn.addEventListener('click', e => {
     errors = []
@@ -7,8 +24,8 @@ btn.addEventListener('click', e => {
     let password = document.querySelector('#password').value
     if (is_valid_email(email) == false) {
         errors.push('email is invalid')
-    }
     if (password.length < 6) {
+    }
         errors.push('password should be 6 characters')
     }
 
@@ -96,4 +113,10 @@ function saveToken(token,is_admin) {
 
 function is_logged_in(){
     
+}
+
+function displayMessage(msg){
+    document.querySelector('#output').innerHTML=`
+    ${msg}
+    `
 }

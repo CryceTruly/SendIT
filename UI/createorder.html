@@ -12,36 +12,43 @@
 </head>
 <body>
         <header>
-          <nav class='cf'>
-              <a href='index.html' id='menushow'>SendIT</a>
-            <ul class='cf' id="menu">
-              <li>
-                <a href='login.html'>Sign In</a>
-              </li>
-              <li>
-                <a href='register.html'>Register</a>
-              </li>
-              <li>
-                <a href='profile.html'>My Profile</a>
-              </li>
-              <li class="active">
-                <a href='createorder.html'>Create Order</a>
-              </li>
-              <li>
-                  <a href='admin/index.html'>Admin</a>
-                </li>
-            </ul>
-          
-          </nav>
-               
+
+                <nav class='cf'>
+                    <a href='index.html' id='menushow'>SendIT</a>
+                  <ul class='cf' id="menu">
+                    <li id="loginli">
+                      <a href='login.html'>Sign In</a>
+                    </li>
+                    <li id="registerli">
+                      <a href='register.html'>Register</a>
+                    </li>
+                    <li>
+                      <a href='profile.html'>My Profile</a>
+                    </li>
+                    <li>
+                      <a href='createorder.html'>Create Order</a>
+                    </li>
+                    <li id="is_admin">
+                        <a href='admin/index.html'>Admin</a>
+                      </li>
+                      <li id="logoutli">
+                        <a href='logout.html'>Logout</a>
+                      </li>
+                  </ul>
+                 
+                </nav>
               </header>
               <!-- The main area -->
 <div class="container">
+        <div class="upperlogin">
+                <h3>Make an order</h3>
+          </div>
   <div class="loginform">
+   
 
 
         <form class="my-form">
-                <h3>Make an order</h3>
+               
                 <div class="form-group">
                     <label for="pickup">Pick Up Location: </label>
                     <input type="text" name="pul" id="pickup">
@@ -73,17 +80,12 @@
               <label>Contact Phone:* </label>
               <input type="tel" name="rtel">
           </div>
-          <hr>
-          <h3>Reciept>
-          <div class="form-group">
-           <label>Total Distance:</label><span class="count">20km</span><br>
-           <label>Estimated Price:</label><span class="count">20 USD</span>
-          
-       </div>
+            
+     
       
 
                
-                <input class="button" type="submit" value="Submit Order" name="">
+                <input class="button signinbtn" type="submit" value="Submit Order" name="">
             </form>
     
      

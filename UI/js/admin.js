@@ -1,6 +1,6 @@
 const baseURL="https://trulysendit.herokuapp.com/api/v2/";
 headers=new Headers()
-document.querySelector("body").classList.add("spinner-1");
+document.querySelector("tbody").classList.add("spinner-1");
 headers.append('Content-Type', 'application/json');
 headers.append('authorization','Bearer '+localStorage.getItem('_token'))
 fetch(baseURL + "parcels", {
@@ -8,7 +8,7 @@ fetch(baseURL + "parcels", {
 })
     .then(response => response.json())
     .then(data => {
-        document.querySelector("body").classList.remove("spinner-1");
+        document.querySelector("tbody").classList.remove("spinner-1");
         
     data.parcels.forEach(parcel=>{
         

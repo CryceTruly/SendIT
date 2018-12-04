@@ -9,35 +9,43 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-        <header>
+    <header>
 
-                <nav class='cf'>
-                  <ul class='cf' id="menu">
-                    
-                    <li>
-                      <a href='login.html'>Sign In</a>
-                    </li>
-                    <li class="active">
-                      <a href='register.html'>Register</a>
-                    </li>
-                    <li>
-                      <a href='profile.html'>My Profile</a>
-                    </li>
-                    <li>
-                      <a href='createorder.html'>Create Order</a>
-                    </li>
-                    
-                  </ul>
-                  <a href='index.html' id='menushow'>SendIT</a>
-                </nav>
-              </header>
+        <nav class='cf'>
+            <a href='index.html' id='menushow'>SendIT</a>
+          <ul class='cf' id="menu">
+            <li id="loginli">
+              <a href='login.html'>Sign In</a>
+            </li>
+            <li id="registerli">
+              <a href='register.html'>Register</a>
+            </li>
+            <li>
+              <a href='profile.html'>My Profile</a>
+            </li>
+            <li>
+              <a href='createorder.html'>Create Order</a>
+            </li>
+            <li id="is_admin">
+                <a href='admin/index.html'>Admin</a>
+              </li>
+              <li id="logoutli">
+                <a href='logout.html'>Logout</a>
+              </li>
+          </ul>
+         
+        </nav>
+      </header>
               <!-- The main area -->
 <div class="container">
+    <div class="upperlogin">
+        <h3>Update Profile Info</h3>
+      </div>
   <div class="loginform">
-
+    
 
         <form class="my-form">
-                <h3>Update Profile Info</h3>
+               
                 <div class="form-group">
                     <label>FullName:* </label>
                     <input type="text" name="fname" value="Cryce Truly">
