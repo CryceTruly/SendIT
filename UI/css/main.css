@@ -138,7 +138,7 @@ small{
 		background: #7b1fa2;
 	}
 	nav a#menushow:after {
-		content: '|||';
+		content: '||||';
 		transform: rotate(-90deg);
 		-ms-transform: rotate(-90deg);
 		-webkit-transform: rotate(-90deg);
@@ -147,8 +147,9 @@ small{
 		display: inline-block;
 		position: absolute;
 		right: 5px;
-		top: 20px;
-		margin-top: 10px;
+		top: 22px;
+		
+		
 	}
 	nav a#menushow {
 		display: block;
@@ -244,9 +245,6 @@ option{
 		margin-left: 0;
 		border: 1px solid gainsboro;
 		text-align: left;
-	}
-	#fgtp {
-		display: none;
 	}
 
 	.my-form input[type="password"],

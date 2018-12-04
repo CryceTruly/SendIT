@@ -1,17 +1,19 @@
 if(localStorage.getItem('_token')!=null){
     document.location.href='index.html';
  }
- const baseURL = "https://trulysendit.herokuapp.com/api/v2/"
+ const baseURL = "http://127.0.01:3000/api/v2/"
 const erroutput = document.querySelector('#errors')
 
  const urlParams = new URLSearchParams(window.location.search);
  const current_item=urlParams.get('message');
- console.log(current_item);
+if(current_item!=null){
+    display_erors(current_item);
+
+
+
+
+}
  
- display_erors(current_item);
-
-
-
 
 
 
@@ -34,7 +36,7 @@ btn.addEventListener('click', e => {
         errors.forEach(err => {
             display_erors(err);
 
-            clear_errors();
+            
 
         })
     } else {
@@ -74,15 +76,12 @@ function startLogin(data) {
         .then(jsondata => {
             document.querySelector("body").classList.remove("spinner-1");
             if (jsondata['auth_token']) {
-                saveToken(jsondata['auth_token'],true)
+                save_user_info(jsondata['auth_token'],jsondata['is_admin'],jsondata['user_id'])
                 document.location.href = 'index.html';
 
             } else {
                 display_erors(jsondata['message'])
-                setTimeout(() => {
-
-                }, 1000);
-                clear_errors()
+                
             }
 
 
@@ -95,6 +94,11 @@ function display_erors(err) {
     erroutput.innerHTML += `
     <li class="errlist">${err}</li>
     `
+
+    setTimeout(() => {
+
+    }, 1000);
+    clear_errors()
 }
 
 function clear_errors() {
@@ -104,9 +108,10 @@ function clear_errors() {
 
 }
 
-function saveToken(token,is_admin) {
+function save_user_info(token,is_admin,user_id) {
     localStorage.setItem('_token', token)
     localStorage.setItem('is_admin',is_admin)
+    localStorage.setItem('user_id',user_id)
 
 
 }

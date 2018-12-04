@@ -1,7 +1,7 @@
 if(localStorage.getItem('_token')!=null){
     document.location.href='index.html';
  }
-const baseURL = "https://trulysendit.herokuapp.com/api/v2/"
+ const baseURL = "http://127.0.01:3000/api/v2/"
 
 const erroutput = document.querySelector('#errors')
 let btn = document.querySelector('#register');
