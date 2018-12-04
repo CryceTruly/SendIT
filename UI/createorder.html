@@ -48,44 +48,50 @@
 
 
         <form class="my-form">
+          <ul id="errors"></ul>
                
                 <div class="form-group">
                     <label for="pickup">Pick Up Location: </label>
-                    <input type="text" name="pul" id="pickup">
+                    <input type="text" name="pul" id="pickup_address">
                 </div>
                 <div class="form-group">
                     <label for="dest">Destination: </label>
                     <input type="text" name="dest" id="dest">
                 </div>
                 <div class="form-group">
-                    <label for="gr">Parcel Weight (grams): </label>
-                    <input type="number" name="weight" id="gr">
+                    <label for="gr">Parcel Weight (Kgrams): </label>
+                    <input type="number" name="weight" id="weight">
                 </div>
+
+                <div class="form-group">
+                  <label for="qty">Quantity: </label>
+                  <input type="number" name="qty" id="qty">
+              </div>
                 <div class="form-group">
                     <label>Comments: </label>
-                    <textarea  name="comments" placeholder=""></textarea>
+                    <textarea  name="comments" placeholder="" id="desc"></textarea>
                 </div>
                <hr>
                <h3>Recipient Details</h3>
                <div class="form-group">
                 <label>FullName:*</label>
-                <input type="text" name="rname">
+                <input type="text" name="rname" id="rname">
             </div>
             <div class="form-group">
               <label>Email:*</label>
-              <input type="email" name="remail">
+              <input type="email" name="remail" id="remail">
           </div>
              
             <div class="form-group">
               <label>Contact Phone:* </label>
-              <input type="tel" name="rtel">
+              <input type="tel" name="rtel" id="rtel">
           </div>
             
      
       
 
                
-                <input class="button signinbtn" type="submit" value="Submit Order" name="">
+                <input class="button signinbtn" type="submit" id="submit" value="Submit Order" name="">
             </form>
     
      
@@ -103,5 +109,6 @@
       </div>
       </footer>
       <script src="js/main.js"></script>
+      <script src="js/new.js"></script>
 </body>
 </html>
