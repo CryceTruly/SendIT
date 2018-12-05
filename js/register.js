@@ -85,7 +85,7 @@ function startSignUp(data) {
             
             if (jsondata['status']==='Success') {
                 
-                document.location.href=`login.html?message=${+ encodeURIComponent(jsondata['message'])}`
+                document.location.href=`login.html?message=${encodeURIComponent(jsondata['message'])}`
             } else {
                 display_erors(jsondata['message'])
                 setTimeout(() => {
@@ -103,13 +103,13 @@ function startSignUp(data) {
 function display_erors(err) {
     err.toLowerCase();
     erroutput.innerHTML += `
-    <li>${err}</li>
+    <li class=errlist>${err}</li>
     `
 }
 
 function clear_errors() {
     setTimeout(() => {
         erroutput.innerHTML = "";
-    }, 2000);
+    }, 4000);
 
 }

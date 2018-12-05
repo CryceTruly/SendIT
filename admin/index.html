@@ -14,19 +14,16 @@
                     <a href='index.html' id='menushow'>SendIT</a>
                   <ul class='cf' id="menu">
                     <li>
-                      <a href='../login.html'>Sign In</a>
-                    </li>
-                    <li>
-                      <a href='../register.html'>Register</a>
-                    </li>
-                    <li>
                       <a href='../profile.html'>My Profile</a>
                     </li>
                     <li>
-                      <a href='../createorder.html'>Create Order</a>
+                      <a href='../createorder.html' title="Create a new order">New</a>
                     </li>
                     <li class="active">
                         <a href='index.html'>Admin</a>
+                      </li>
+                      <li id="logoutli">
+                        <a href='../logout.html'>Logout</a>
                       </li>
                   </ul>
                  
@@ -45,7 +42,7 @@
   <div class="container">
    
     <h4><b>All Orders</b></h4> 
-    <p>77</p> 
+    <p id="total"></p> 
   </div>
 </div>
        
@@ -53,7 +50,7 @@
   <div class="container">
    
     <h4><b>Cancelled</b></h4> 
-    <p>77</p> 
+    <p id="can">77</p> 
   </div>
 </div>
        
@@ -61,7 +58,7 @@
   <div class="container">
    
     <h4><b>Delivered</b></h4> 
-    <p>7</p> 
+    <p id="del">7</p> 
   </div>
 </div>
        
@@ -69,7 +66,7 @@
   <div class="container">
    
     <h4><b>In Transit</b></h4> 
-    <p>77</p> 
+    <p id="in">77</p> 
   </div>
 </div>
       </div>
@@ -87,7 +84,8 @@
     <th>User</th>
     <th>Pickup Location</th>
     <th>Destination</th>
-    <th>Status</th>
+    <th>Placed</th>
+    <th></th>
     <th></th>
   </tr>
   </thead>

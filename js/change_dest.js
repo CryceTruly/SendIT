@@ -1,20 +1,19 @@
-const baseURL = "https://trulysendit.herokuapp.com/api/v2/"
+const baseURL = "http://127.0.0.1:3000/api/v2/"
 const erroutput = document.querySelector('#errors')
 const urlParams = new URLSearchParams(window.location.search);
-const current_item=urlParams.get('order')
+const current_item=urlParams.get('parcel')
 
 
 let btn = document.querySelector('#update');
 btn.addEventListener('click', e => {
+    e.preventDefault()
     errors = []
-    let current_location = document.querySelector('#present').value
-    
-    var event = document.getElementById("st");
-let status = event.options[event.selectedIndex].value;
-    if (status.length < 2) {
-        errors.push('status should be 2 characters')
-    }
+    let new_dest = document.querySelector('#dest').value
 
+    if(new_dest.length<4){
+        errors.push('Destination address too short');
+    }
+    
     if (errors.length > 0) {
         errors.forEach(err => {
             display_erors(err);
@@ -25,7 +24,7 @@ let status = event.options[event.selectedIndex].value;
     } else {
         document.querySelector("body").classList.add("spinner-1");
         
-        update_presentLocation(current_location,status)
+        update_destination(new_dest)
        
     }
 
@@ -38,23 +37,17 @@ let status = event.options[event.selectedIndex].value;
 
 })
 
-function update_presentLocation(location,status) {
-    console.log(location+status);
+function update_destination(location) {
     let headers = new Headers();
     headers.append('authorization','Bearer '+localStorage.getItem('_token'))
     headers.append('Content-Type', 'application/json');
-    fetch(baseURL + `parcels/${current_item}/status`, {
-        method: "PUT", body: JSON.stringify({'status':status}), headers: headers
-    })
-    fetch(baseURL +`parcels/${current_item}/presentLocation`, {
-        method: "PUT", body: JSON.stringify({'current_location':location}), headers: headers
+    fetch(baseURL +`parcels/${current_item}/destination`, {
+        method: "PUT", body: JSON.stringify({'destination_address':location}), headers: headers,mode:'cors'
     })
         .then(response => response.json())
         .then(jsondata => {
             document.querySelector("body").classList.remove("spinner-1");
-           
-alert('item updated')
-document.location.href=`details.html?item=${current_item}`
+           alert('item updated')
 
 
         })

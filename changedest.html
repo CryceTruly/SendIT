@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Send it</title>
+    <title>Send it|Order Destination</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
         <header>
@@ -24,7 +24,7 @@
                       <a href='profile.html'>My Profile</a>
                     </li>
                     <li>
-                      <a href='createorder.html'>Create Order</a>
+                      <a href='createorder.html' title="Create a new order">New</a>
                     </li>
                     <li id="is_admin">
                         <a href='admin/index.html'>Admin</a>
@@ -36,24 +36,40 @@
                  
                 </nav>
               </header>
-              <!-- The main area -->
+<!-- The main area -->
+<div class="container">
+        <div class="upperlogin">
+                <h3>Update order</h3>
+            </div>
+    <div class="loginform">
+        <form class="my-form">
+           
+            <div class="form-group">
+                <label>Pick Up Location: </label>
+                <small>Keyr nl44 Home</small>
+            </div>
+            <div class="form-group">
+                <label for="dest">New Destination: </label>
+                <input type="text" name="dest" id="dest">
+            </div>
+            <ul id="errors"></ul>
+            <input class="button" type="submit" value="Save" id="update">
+        </form>
 
-  <div id="hero">
-    <div class="content">
-      <h1>SendIT</h1>
-      <p>Your Parcel delivery boy</p>
-      <a href="login.html" class="btnl" >GET STARTED</a>
+
     </div>
-  </div>
 
-     <!-- Footer -->
-  <footer>
 
-        <div class="footer-bottom text-center">
-          Copyright &copy; 2018 SendIT
-      </div>
-      </footer>
-    <script src="js/index.js"></script>
-    <script src="js/main.js"></script>
+</div>
+
+<!-- Footer -->
+<footer>
+
+    <div class="footer-bottom text-center">
+        Copyright &copy; 2018 SendIT
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/change_dest.js"></script>
 </body>
 </html>

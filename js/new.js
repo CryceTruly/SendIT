@@ -111,13 +111,13 @@ function createParcel(data) {
 function display_erors(err) {
     err.toLowerCase();
     erroutput.innerHTML += `
-    <li>${err}</li>
+    <li class=errlist>${err}</li>
     `
 }
 
 function clear_errors() {
     setTimeout(() => {
         erroutput.innerHTML = "";
-    }, 2000);
+    }, 4000);
 
 }
