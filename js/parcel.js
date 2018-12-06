@@ -27,6 +27,8 @@ fetch(baseURL + `parcels/${current_item}`, {
 
           <h4><strong>Estimated Distance</strong></h4>
           <span> ${data.distance} km</span>
+          <h4><strong>Estimated Trip Duration</strong></h4>
+          <span> ${getEstimatedTime(data.distance)} hrs</span>
   
 
           <h4><strong>Description</strong></h4>
@@ -51,6 +53,8 @@ fetch(baseURL + `parcels/${current_item}`, {
           <h4>Total Price</h4>
           <span>${data.price} USD</span>
 
+          
+
           </div>
 
 
@@ -66,11 +70,101 @@ fetch(baseURL + `parcels/${current_item}`, {
          
         
           check_user_actions(data.user_id,localStorage.getItem('user_id'));
+          initMap(data.pickuplat_lng,data.destination_latlng,data.pickup_address,data.destination_address);
+          
        
        
 
 
     })
+
+  
+
+    // Initialize and add the map
+function initMap(v,v2,p1,p2) {
+    var options = {
+        zoom:8,
+        center:v
+      }
+      
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+      
+      // Add marker
+      var marker = new google.maps.Marker({
+        position:v,
+        map:map
+      });
+
+
+      //ADD POLYLINES
+      var flightPlanCoordinates = [
+        v,
+        v2
+        
+      ];
+      var flightPath = new google.maps.Polyline({
+        path: flightPlanCoordinates,
+        geodesic: true,
+        strokeColor: '#FF0000',
+        strokeOpacity: 1.0,
+        strokeWeight: 2
+      });
+
+      flightPath.setMap(map);
+   
+      var infoWindow = new google.maps.InfoWindow({
+        content:`${p1}`
+      });
+
+      marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+      });
+      
+      
+    var markers = [
+        {
+          coords:v,
+          content:`${p1}`
+        },
+        {
+          coords:v2,
+          content:`${p2}`
+        }
+    ]
+    // Loop through markers
+    for(var i = 0;i < markers.length;i++){
+        // Add marker
+        addMarker(markers[i]);
+      }
+
+      // Add Marker Function
+      function addMarker(props){
+        var marker = new google.maps.Marker({
+          position:props.coords,
+          map:map,
+          //icon:props.iconImage
+        });
+    
+     // Check for customicon
+     if(props.iconImage){
+        // Set icon image
+        marker.setIcon(props.iconImage);
+      }
+
+      // Check content
+      if(props.content){
+        var infoWindow = new google.maps.InfoWindow({
+          content:props.content
+        });
+
+        marker.addListener('click', function(){
+          infoWindow.open(map, marker);
+        });
+      }
+  }
+
+}
 
 function cancelOrder(status){
     console.log(status);
@@ -123,6 +217,8 @@ function deleteOrder(id){
 
 }
 
+
+
 function printOrder(){
     document.querySelector(".first").innerHTML=`<hr>
     <i><b>SendIT</b> parcel delivery services</i>
@@ -145,4 +241,15 @@ function check_user_actions(user,owner){
     Logged in as administrator
     `;
     }
+}
+
+function getEstimatedTime(distance){
+    const speed=50;
+    let duration = distance/speed;
+    let min=duration.toString().split('.')[1];
+
+    
+    
+    return parseInt(duration).toString();
+
 }
