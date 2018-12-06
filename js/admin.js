@@ -33,7 +33,8 @@ fetch(baseURL + "parcels", {
             <td>${parcel.sender_email}</td>
             <td>${parcel.pickup_address}</td>
             <td>${parcel.destination_address}</td>
-            <td>${parcel.placed}</td>
+            <td>${formatDate(parcel.placed)}</td>
+            <td><a href=../details.html?parcel=${parcel.parcel_id} class="button">Details</a></td>
             <td><a href="../editorder.html?order=${parcel.parcel_id}" class="button">Update</a></td>
         </tr>
             `
@@ -49,3 +50,9 @@ fetch(baseURL + "parcels", {
 
 
     })
+
+
+    function formatDate(date){
+        return date.split('00')[0];
+    }
+    

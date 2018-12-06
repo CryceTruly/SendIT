@@ -46,10 +46,22 @@ function update_destination(location) {
     })
         .then(response => response.json())
         .then(jsondata => {
+           if(jsondata['new_destination']){
             document.querySelector("body").classList.remove("spinner-1");
-           alert('item updated')
+            alert('item updated')
 
+           }else{
+            document.querySelector("body").classList.remove("spinner-1");
+               display_erors(jsondata['message']);
+           }
+            
+            
 
+        }).catch(function(err){
+            console.log(err);
+            
+            document.querySelector("body").classList.remove("spinner-1");
+            display_erors(jsondata['message'])
         })
     
     
@@ -61,6 +73,7 @@ function display_erors(err) {
     erroutput.innerHTML += `
     <li class="errlist">${err}</li>
     `
+    clear_errors()
 }
 
 function clear_errors() {

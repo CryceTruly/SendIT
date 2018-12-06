@@ -33,7 +33,7 @@ fetch(baseURL +`users/${parseInt(localStorage.getItem('user_id'))}/parcels`, {
                 <tr>
                 <td>${parcel.parcel_id}</td>
                 <td>${parcel.status}</td>
-                <td>${parcel.placed}</td>
+                <td>${formatDate(parcel.placed)}</td>
                   <td><a href=details.html?parcel=${parcel.parcel_id} class="button">Details</a></td>
               </tr>
                 `
@@ -73,4 +73,7 @@ fetch(baseURL +`users/${parseInt(localStorage.getItem('user_id'))}/parcels`, {
             })
                    
         }
-   
+        function formatDate(date){
+            return date.split('00')[0];
+        }
+        
