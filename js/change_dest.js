@@ -11,7 +11,7 @@ btn.addEventListener('click', e => {
     let new_dest = document.querySelector('#dest').value
 
     if(new_dest.length<4){
-        errors.push('Destination address too short');
+        errors.push('Destination address should be atleast 2 characters long');
     }
     
     if (errors.length > 0) {
@@ -46,9 +46,11 @@ function update_destination(location) {
     })
         .then(response => response.json())
         .then(jsondata => {
+            console.log(jsondata);
+            
            if(jsondata['new_destination']){
             document.querySelector("body").classList.remove("spinner-1");
-            alert('item updated')
+            document.location.href=`../details.html?parcel=${current_item}&msg=Destination Updated`
 
            }else{
             document.querySelector("body").classList.remove("spinner-1");
@@ -61,7 +63,7 @@ function update_destination(location) {
             console.log(err);
             
             document.querySelector("body").classList.remove("spinner-1");
-            display_erors(jsondata['message'])
+            display_erors('An error has occured')
         })
     
     
@@ -79,6 +81,6 @@ function display_erors(err) {
 function clear_errors() {
     setTimeout(() => {
         erroutput.innerHTML = "";
-    }, 2000);
+    }, 4000);
 
 }
