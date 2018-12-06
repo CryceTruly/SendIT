@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
-const current_item=urlParams.get('parcel')
+const current_item=urlParams.get('parcel');
+
 const baseURL="http://127.0.0.1:3000/api/v2/";
 headers=new Headers()
 document.querySelector(".oneleft").classList.add("spinner-1");
@@ -11,6 +12,7 @@ fetch(baseURL + `parcels/${current_item}`, {
     .then(response => response.json())
     .then(data => {
         console.log(data);
+       
         
       document.querySelector(".new").innerHTML=`          Created                  ${data.created}`;
       document.querySelector(".id").innerHTML=`Order #${data.parcel_id}`;
@@ -54,16 +56,16 @@ fetch(baseURL + `parcels/${current_item}`, {
 
           <div class="row first">
           <div class="column">
-             <button class="button" id=printbtn onclick=printOrder()>Print Order</button>
-              <button class="button" id=cancelbtn onclick=cancelOrder("${data.status}")>Cancel Order</button>
-              <button class="button" id=deletebtn onclick=deleteOrder(${data.parcel_id})>Delete Order</button>
+             <button class="button btn-green" id=printbtn onclick=printOrder()>Print Order</button>
+              <button class="button btn-pink" id=cancelbtn onclick=cancelOrder("${data.status}")>Cancel Order</button>
+              <button class="button btn-red" id=deletebtn onclick=deleteOrder(${data.parcel_id})>Delete Order</button>
               <button class="button btn-info"><a href=changedest.html?parcel=${data.parcel_id}>Change Destination Address</a></button>
           </div>
       </div>
           `
          
         
-      
+          check_user_actions(data.user_id,localStorage.getItem('user_id'));
        
        
 
@@ -133,4 +135,14 @@ function printOrder(){
     window.print();
 
     document.body.innerHTML = originalContents;
+}
+
+function check_user_actions(user,owner){
+    console.log(owner);
+    
+    if(user!=owner){
+        document.querySelector(".first").innerHTML=`<hr>
+    Logged in as administrator
+    `;
+    }
 }
