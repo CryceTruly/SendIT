@@ -6,102 +6,107 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Send it:Dashbaord</title>
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
         <header>
 
                 <nav class='cf'>
-                    <a href='index.html' id='menushow'>SendIT</a>
+                    <a href='index.html' id='menushow'><i class="fa fa-send"></i>SendIT</a>
                   <ul class='cf' id="menu">
                     <li>
-                      <a href='../profile.html'>My Profile</a>
+                      <a href='../profile.html'>Me <i class="fa fa-circle"></i> </a>
                     </li>
                     <li>
-                      <a href='../createorder.html' title="Create a new order">New</a>
-                    </li>
+                        <a href='../createorder.html' title="Create a new order">Create<i class="fa fa-plus"></i></a>
+                      </li>
                     <li class="active">
-                        <a href='index.html'>Admin</a>
+                        <a href='index.html'>Admin<i class="fa fa-tripadvisor"></i> </a>
                       </li>
                       <li id="logoutli">
-                        <a href='../logout.html'>Logout</a>
-                      </li>
+                          <a><i class="fa fa-search"></i></a>
+                        </li>
+                      <li id="logoutli">
+                          <a href='../logout.html'>Logout<i class="fa fa-lock"></i></a>
+                        </li>
                   </ul>
                  
                 </nav>
               </header>
               <!-- The main area -->
 <div class="container">
-<h3 id="db">Welcome to the dashboard Mike</h3>
-
 <div class="row">
-    <div class="column cards">
-       <h3>Stats</h3>
+    
       <div class="boards">
-        
+          <h3>Stats</h3>
 <div class="card">
-  <div class="container">
-   
+  <div class="container container1">
     <h4><b>All Orders</b></h4> 
     <p id="total"></p> 
   </div>
 </div>
-       
 <div class="card">
-  <div class="container">
-   
-    <h4><b>Cancelled</b></h4> 
-    <p id="can">77</p> 
-  </div>
-</div>
-       
-<div class="card">
-  <div class="container">
-   
-    <h4><b>Delivered</b></h4> 
-    <p id="del">7</p> 
-  </div>
-</div>
-       
-<div class="card">
-  <div class="container">
-   
-    <h4><b>In Transit</b></h4> 
-    <p id="in">77</p> 
-  </div>
-</div>
-      </div>
-
-
-      
-          </div>
-    <div class="column orders">
-<h3>Recent Orders</h3>
-
-<table>
-  <thead>
-    <tr>
-    <th>Order ID</th>
-    <th>User</th>
-    <th>Pickup Location</th>
-    <th>Destination</th>
-    <th>Placed</th>
-    <th></th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-
-    
-   
-  </tbody>
-  
-  
-</table>
-
-
+    <div class="container container2" >
+     
+      <h4><b>Cancelled</b></h4> 
+      <p id="can">77</p> 
     </div>
   </div>
+         
+  <div class="card">
+    <div class="container container3">
+     
+      <h4><b>Delivered</b></h4> 
+      <p id="del">7</p> 
+    </div>
+  </div>
+         
+  <div class="card">
+    <div class="container container4">
+      <h4><b>In Transit</b></h4> 
+      <p id="in">77</p> 
+    </div>
+  </div>
+
+  <div class="card">
+      <div class="container container5">
+        <h4><b>Pending</b></h4> 
+        <p id="pen"></p> 
+      </div>
+    </div>
+     </div>
+    </div>
+    <div class="column2">
+      <div class="orders">
+        
+<table>
+    <thead>
+      <tr>
+      <th>Order ID</th>
+      <th>User</th>
+      <th>Pickup Location</th>
+      <th>Destination</th>
+      <th>Placed</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+  
+      
+     
+    </tbody>
+    
+    
+  </table>
+  
+  
+
+      </div>
 </div>
+</div>
+
+
 
      <!-- Footer -->
   <footer>
@@ -111,6 +116,6 @@
       </div>
       </footer>
       <script src="../js/admin.js"></script>
-    <script src="../js/main.js"></script>
+    <!-- <script src="../js/main.js"></script> -->
 </body>
 </html>

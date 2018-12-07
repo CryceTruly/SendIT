@@ -85,7 +85,7 @@ function startSignUp(data) {
             
             if (jsondata['status']==='Success') {
                 
-                document.location.href=`login.html?message=${encodeURIComponent(jsondata['message'])}`
+                document.location.href=`login.html?message=${encodeURIComponent(jsondata['message'])} &status=success`
             } else {
                 display_erors(jsondata['message'])
                 setTimeout(() => {

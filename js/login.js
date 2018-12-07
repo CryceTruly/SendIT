@@ -5,6 +5,11 @@ if(localStorage.getItem('_token')!=null){
 const erroutput = document.querySelector('#errors')
  const urlParams = new URLSearchParams(window.location.search);
  const current_item=urlParams.get('message');
+ const status=urlParams.get('status');
+ if(status=='success'){
+     erroutput.classList.add('success');
+     
+ }
 if(current_item!=null){
     display_erors(current_item);
 }
@@ -86,14 +91,15 @@ function display_erors(err) {
 
     setTimeout(() => {
 
-    }, 1000);
+    }, 4000);
     clear_errors()
 }
 
 function clear_errors() {
     setTimeout(() => {
         erroutput.innerHTML = "";
-    }, 2000);
+        erroutput.classList.remove('success');
+    }, 4000);
 
 }
 
