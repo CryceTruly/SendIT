@@ -3,22 +3,11 @@ if(localStorage.getItem('_token')!=null){
  }
  const baseURL = "http://127.0.01:3000/api/v2/"
 const erroutput = document.querySelector('#errors')
-
  const urlParams = new URLSearchParams(window.location.search);
  const current_item=urlParams.get('message');
 if(current_item!=null){
     display_erors(current_item);
-
-
-
-
 }
- 
-
-
-
-
-
 let btn = document.querySelector('#login');
 btn.addEventListener('click', e => {
     errors = []

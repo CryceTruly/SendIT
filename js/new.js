@@ -47,7 +47,7 @@ if(desc.length<5){
 
         })
     } else {
-        document.querySelector("body").classList.add("spinner-1");
+        document.querySelector("#loading").classList.add("spinner-1");
         data = {
             "pickup_address": pickup_address,
             "destination_address": destination_address,
@@ -82,13 +82,13 @@ function createParcel(data) {
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization','Bearer '+localStorage.getItem('_token'))
     fetch(baseURL + "parcels", {
-        method: "POST", body: JSON.stringify(data), headers: headers
+        method: "POST",body: JSON.stringify(data), headers: headers
     })
         .then(response => 
             response.json()
             ).catch(err=>console.log(err)            )
         .then(jsondata => {
-            document.querySelector("body").classList.remove("spinner-1");
+            document.querySelector("#loading").classList.remove("spinner-1");
             console.log(jsondata);
             
             if (jsondata['status']==="success") {
@@ -111,13 +111,13 @@ function createParcel(data) {
 function display_erors(err) {
     err.toLowerCase();
     erroutput.innerHTML += `
-    <li>${err}</li>
+    <li class=errlist>${err}</li>
     `
 }
 
 function clear_errors() {
     setTimeout(() => {
         erroutput.innerHTML = "";
-    }, 2000);
+    }, 4000);
 
 }

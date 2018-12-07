@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Send it | Order details</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico"/>
 </head>
 <body> <header>
 
@@ -23,7 +23,7 @@
               <a href='profile.html'>My Profile</a>
             </li>
             <li>
-              <a href='createorder.html'>Create Order</a>
+              <a href='createorder.html' title="Create a new order">New</a>
             </li>
             <li id="is_admin">
                 <a href='admin/index.html'>Admin</a>
@@ -35,45 +35,37 @@
          
         </nav>
       </header>
+
+      
+  <div id="my-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h3 id="head"></h3>
+      </div>
+      <div class="modal-body">
+        <p id="body"></p>
+      </div>
+      <div class="modal-footer">
+        <button id="ok" class="button" >OK</button>
+      </div>
+    </div>
+  </div>
 <!-- The main area -->
 <div class="container">
-    <h3>Order #5009</h3>
+        <div id=printsection>
+  
+    <span class="id"></span><small class="new"></small>
     <hr>
 
     <div class="row">
         <div class="column oneleft">
-            <h4><strong>Pick Up Location Address</strong></h4>
-            <p> 213 xML Mbarara Uganda</p>
-
-            <h4><strong>Destination Address</strong></h4>
-            <span> 2 Street Kampala Uganda</span>
-
-            <h4>Current Location</h4>
-            <p>Lyantonde</p>
-
-            <h4>Status</h4>
-            <p>In Transit</p>
-
-            <h4>Total Weight</h4>
-            <span>5gr</span>
-
-            <h4>Total Price</h4>
-            <span>500 USD</span>
-
-
-            <div class="row first">
-                <div class="column">
-                    <button class="button">Cancel Order</button>
-
-                </div>
-                <div class="column">
-                    <button class="button btn-info"><a href="changedest.html">Change Destination Address</a></button>
-                </div>
-            </div>
+           
+           
 
         </div>
         <div class="column">
-            <div style="border:1px solid gainsboro;min-height: 500px; background: #f2f2f2;text-align: center;margin: auto;">
+            <div id="map" style="border:1px solid gainsboro;min-height: 500px; background: #f2f2f2;text-align: center;margin: auto;">
                 <p>Displaying a google map details</p>
             </div>
 
@@ -82,7 +74,7 @@
 
     <div class="row second" style="display: none">
         <div class="column">
-            <button class="button">Cancel Order</button>
+           
 
         </div>
         <div class="column">
@@ -98,7 +90,12 @@
         Copyright &copy; 2018 SendIT
     </div>
 </footer>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQQ3v45Vf1LVh2JZFwh4yHaM4ERoPf1M0&callback=initMap">
+</script>
 
 <script src="js/main.js"></script>
+<script src="js/parcel.js"></script>
+<script src="js/maps.js"></script>
 </body>
 </html>
