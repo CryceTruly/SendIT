@@ -138,7 +138,7 @@ small{
 		background: #7b1fa2;
 	}
 	nav a#menushow:after {
-		content: '||||';
+		content: '|||';
 		transform: rotate(-90deg);
 		-ms-transform: rotate(-90deg);
 		-webkit-transform: rotate(-90deg);
@@ -148,6 +148,7 @@ small{
 		position: absolute;
 		right: 5px;
 		top: 22px;
+		margin-top: 7px;
 		
 		
 	}
@@ -382,6 +383,7 @@ thead {
 	border: 1px solid #eee;
 	margin: 5px;
 	transition: 0.3s;
+	display: block;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -398,7 +400,7 @@ thead {
 	display: grid;
 	float: left;
 	grid-template-areas: inherit;
-	grid-gap: 21px;
+	grid-gap: 11px;
 }
 
 .btn-info {
@@ -682,4 +684,16 @@ ul .errlist {
   }
   .btn-red{
 	  background: red;
+  }
+  .boards{
+	  margin: auto 20%;
+  }
+
+  .success{
+	background: rgb(137, 196, 137);
+	  color: white;
+  }
+  .success li{
+	background: rgb(137, 196, 137);
+	color: white;
   }
