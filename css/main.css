@@ -697,3 +697,9 @@ ul .errlist {
 	background: rgb(137, 196, 137);
 	color: white;
   }
+
+  .searchResults{
+	  color: #006699 !important;
+	  text-decoration: underline;
+	  
+  }
