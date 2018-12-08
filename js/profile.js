@@ -3,10 +3,18 @@ headers=new Headers()
 document.querySelector(".test").classList.add("spinner-1");
 headers.append('Content-Type', 'application/json');
 headers.append('authorization','Bearer '+localStorage.getItem('_token'))
-loadProfile()
+const urlParams = new URLSearchParams(window.location.search);
+const current_item=urlParams.get('user');
+if(current_item!==null){
+    user=parseInt(current_item)
+
+}else{
+    user=parseInt(localStorage.getItem('user_id'));
+}
+loadProfile(user)
 
 
-fetch(baseURL +`users/${parseInt(localStorage.getItem('user_id'))}/parcels`, {
+fetch(baseURL +`users/${user}/parcels`, {
     method: "GET", headers: headers
 })
     .then(response => response.json())
@@ -49,9 +57,9 @@ fetch(baseURL +`users/${parseInt(localStorage.getItem('user_id'))}/parcels`, {
         
         
         
-            function loadProfile(){
+            function loadProfile(user){
         
-        fetch(baseURL + `users/${localStorage.getItem('user_id')}`, {
+        fetch(baseURL + `users/${user}`, {
             method: "GET", headers: headers
         })
             .then(response => response.json())
