@@ -26,9 +26,9 @@ fetch(baseURL + `parcels/${current_item}`, {
           <span> ${data.destination_address}</span>
 
           <h4><strong>Estimated Distance</strong></h4>
-          <span> ${data.distance} km</span>
+          <span> ${Math.round(data.distance)} km</span>
           <h4><strong>Estimated Trip Duration</strong></h4>
-          <span> ${getEstimatedTime(data.distance)} hrs</span>
+          <span> ${(getEstimatedTime(data.distance))}</span>
   
 
           <h4><strong>Description</strong></h4>
@@ -51,7 +51,7 @@ fetch(baseURL + `parcels/${current_item}`, {
           <span>${data.recipient_email}</span>
 
           <h4>Total Price</h4>
-          <span>${data.price} USD</span>
+          <span>${Math.round(data.price)} USD</span>
 
           
 
@@ -63,7 +63,7 @@ fetch(baseURL + `parcels/${current_item}`, {
              <button class="button btn-green" id=printbtn onclick=printOrder()>Print Order</button>
               <button class="button btn-pink" id=cancelbtn onclick=cancelOrder("${data.status}")>Cancel Order</button>
               <button class="button btn-red" id=deletebtn onclick=deleteOrder(${data.parcel_id})>Delete Order</button>
-              <button class="button btn-info"><a href=changedest.html?parcel=${data.parcel_id}>Change Destination Address</a></button>
+              <button class="button btn-info"><a href=changedest.html?parcel=${data.parcel_id}>Edit Destination</a></button>
           </div>
       </div>
           `
@@ -247,9 +247,15 @@ function getEstimatedTime(distance){
     const speed=50;
     let duration = distance/speed;
     let min=duration.toString().split('.')[1];
+    new_min_val='0.'.concat(min)
+    
+    bmin=new_min_val*60;
+    if(parseInt(duration) > 0){
+        return parseInt(duration).toString()+"hr "+parseInt(bmin).toString()+"min";
 
-    
-    
-    return parseInt(duration).toString();
+    }
+else{
+    return parseInt(bmin).toString()+" Minutes";
+}
 
 }
