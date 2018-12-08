@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Send it:Dashbaord</title>
+    <title>Send it:users</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -20,14 +20,14 @@
                     <li>
                         <a href='../createorder.html' title="Create a new order">Create<i class="fa fa-plus"></i></a>
                       </li>
-                      <li>
-                        <a href='users.html'>Users<i class="fa fa-users"></i> </a>
-                      </li>
-                    <li class="active">
+                    <li>
                         <a href='index.html'>Admin<i class="fa fa-tripadvisor"></i> </a>
                       </li>
+                      <li class="active">
+                        <a href='users.html'>Users<i class="fa fa-users"></i> </a>
+                      </li>
                       <li id="logoutli">
-                          <a href="../search.html"><i class="fa fa-search"></i></a>
+                          <a><i class="fa fa-search"></i></a>
                         </li>
                       <li id="logoutli">
                           <a href='../logout.html'>Logout<i class="fa fa-lock"></i></a>
@@ -41,42 +41,36 @@
 <div class="row">
     
       <div class="boards">
-          <h3>Stats</h3>
+          <h3>Statistics</h3>
 <div class="card">
   <div class="container container1">
-    <h4><b>All Orders</b></h4> 
-    <p id="total"></p> 
+    <h4><b>All Users</b></h4> 
+    <p id="can">77</p> 
   </div>
 </div>
 <div class="card">
     <div class="container container2" >
      
-      <h4><b>Cancelled</b></h4> 
-      <p id="can">77</p> 
+      <h4><b>Regular</b></h4> 
+      <p id="del">77</p> 
     </div>
   </div>
          
   <div class="card">
     <div class="container container3">
      
-      <h4><b>Delivered</b></h4> 
-      <p id="del">7</p> 
+      <h4><b>Moderators</b></h4> 
+      <p id="in">7</p> 
     </div>
   </div>
-         
+        
   <div class="card">
-    <div class="container container4">
-      <h4><b>In Transit</b></h4> 
-      <p id="in">77</p> 
+    <div class="container container3">
+     
+      <h4><b>Admins</b></h4> 
+      <p id="pen">7</p> 
     </div>
   </div>
-
-  <div class="card">
-      <div class="container container5">
-        <h4><b>Pending</b></h4> 
-        <p id="pen"></p> 
-      </div>
-    </div>
      </div>
     </div>
     <div class="column2">
@@ -85,12 +79,11 @@
 <table>
     <thead>
       <tr>
-      <th>Order ID</th>
-      <th>User</th>
-      <th>Pickup Location</th>
-      <th>Destination</th>
-      <th>Placed</th>
-      <th></th>
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Joined</th>
+      <th>Role</th>
       <th></th>
     </tr>
     </thead>
@@ -118,7 +111,7 @@
           Copyright &copy; 2018 SendIT
       </div>
       </footer>
-      <script src="../js/admin.js"></script>
+      <script src="../js/users.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
