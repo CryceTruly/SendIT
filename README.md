@@ -6,7 +6,7 @@ SendIT charges based on weight of the parcels
 ## Live UI website
 [SendIT UI](https://crycetruly.github.io/SendIT/ "SendIT UI Pages")
 
-## Contribute to the UI design
+## Contribute to the frontend developmet
 ```
 git clone https://www.github.com/crycetruly/SendIT.git
 
@@ -19,4 +19,8 @@ git checkout feature
 code .
 
 ```
+
+## Future work
+- Pagination
+
 
