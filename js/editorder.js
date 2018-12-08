@@ -45,22 +45,28 @@ function update_presentLocation(location,status) {
     headers.append('Content-Type', 'application/json');
     fetch(baseURL + `parcels/${current_item}/status`, {
         method: "PUT", body: JSON.stringify({'status':status}), headers: headers
-    })
+    }).then(res=>res.json).then(function(data){
+       
+        
     fetch(baseURL +`parcels/${current_item}/presentLocation`, {
         method: "PUT", body: JSON.stringify({'current_location':location}), headers: headers
     })
         .then(response => response.json())
         .then(jsondata => {
             document.querySelector("body").classList.remove("spinner-1");
-           
-alert('item updated')
-document.location.href=`details.html?item=${current_item}`
+
+            console.log(jsondata);
+            
+        
+// document.location.href=`details.html?item=${current_item}&message=Current Location Updated&status=success`
 
 
         })
     
     
 
+
+    })
 }
 
 function display_erors(err) {
