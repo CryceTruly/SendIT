@@ -1,5 +1,3 @@
- 
-const baseURL = "https://trulysendit.herokuapp.com/"
 function initMap(){
     
     
@@ -24,7 +22,8 @@ if(localStorage.getItem('_token')==null){
     getReverseGeocodingData(position.coords.latitude,position.coords.longitude);
   }
 
-
+ 
+ const baseURL = "http://127.0.01:3000/api/v2/"
 
 const erroutput = document.querySelector('#errors')
 let btn = document.querySelector('#submit');
