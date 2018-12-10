@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const current_item=urlParams.get('parcel');
+const baseURL = "https://trulysendit.herokuapp.com/";
 const msg=urlParams.get("message");
 if(msg){
     document.querySelector("#msgoutput").innerHTML=`
@@ -10,8 +11,8 @@ if(msg){
     document.querySelector("#msgoutput").innerHTML=``;
    }, 4000);
 }
+ 
 
-const baseURL="http://127.0.0.1:3000/api/v2/";
 headers=new Headers()
 document.querySelector(".oneleft").classList.add("spinner-1");
 headers.append('Content-Type', 'application/json');

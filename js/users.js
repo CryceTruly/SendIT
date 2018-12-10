@@ -1,4 +1,4 @@
-const baseURL="http://127.0.0.1:3000/api/v2/";
+const baseURL = "https://trulysendit.herokuapp.com/";
 if(localStorage.getItem('_token')==null){
     document.location.href='../login.html?message=you need to log in first';
  }
