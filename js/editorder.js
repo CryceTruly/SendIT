@@ -54,8 +54,16 @@ function update_presentLocation(location,status) {
         .then(response => response.json())
         .then(jsondata => {
             document.querySelector("body").classList.remove("spinner-1");
-
             console.log(jsondata);
+            
+            if(jsondata['status']=='error'){
+               display_erors(jsondata['message']);
+            }else{
+                 document.location.href=`details.html?message=Current Location updated Successfully&parcel=${current_item}`;
+           
+            }
+
+            
             
         
 // document.location.href=`details.html?item=${current_item}&message=Current Location Updated&status=success`
@@ -74,6 +82,7 @@ function display_erors(err) {
     erroutput.innerHTML += `
     <li class="errlist">${err}</li>
     `
+    clear_errors()
 }
 
 function clear_errors() {

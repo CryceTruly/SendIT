@@ -2,9 +2,8 @@ body {
 	font-family: 'Consolas', sans-serif;
 	margin: 0;
 	line-height: 1.6;
-	background: #ffffff;
+	background: #ffffff url('../img/white1.jpg');
 }
-
 a {
 	text-decoration: none;
 	color: #ccc;
@@ -49,10 +48,11 @@ nav {
 nav ul {
 	padding: 0;
 	margin: 0;
+	padding-right: 15%;
 }
 nav li {
 	display: inline;
-	float: left;
+	float:left;
 }
 nav a {
 	display: inline-block;
@@ -69,12 +69,28 @@ nav li:hover {
 	float: right;
 	margin-right: 21px;
 }
+
+#menushow{
+	padding-left: 15%;
+}
 small{
 	margin-left: 15px;
 }
+
+@media screen and (max-width:1051px){
+	nav ul {
+		padding: 0;
+		margin: 0;
+		padding-right: 0;
+	}
+	#menushow{
+		padding-left: 0%;
+	}
+}
+
 @media screen and (max-width: 558px) {
-	.first {
-		display: none;
+	#menushow{
+		padding-left: 0;
 	}
 
 	.second {
@@ -224,7 +240,7 @@ option{
 
 /* form on mobile */
 
-@media screen and (max-width: 558px) {
+@media screen and (max-width: 800px) {
 	.content > p,
 	h1 {
 		display: none;
@@ -259,7 +275,7 @@ option{
 		padding: 16px;
 		border: none;
 		border-radius: 4px;
-		background-color: #f1f1f1;
+		border: 1px solid gainsboro;
 	}
 }
 
@@ -316,12 +332,17 @@ option{
 
 /* nav toggle */
 
+
+
+
+
+
 .showing {
 	position: absolute;
 	display: block;
 	width: 50%;
-	left: 0;
-	top: 0;
+	left: 30;
+	top: 30;
 	height: 100%;
 }
 
@@ -377,10 +398,14 @@ thead {
 	}
 }
 
+.fa{
+	font-weight: bolder;
+}
+
 /*d`asqhbord*/
 .card {
 	/* Add shadows to create the "card" effect */
-	border: 1px solid #eee;
+	border: 1px solid #fff;
 	margin: 5px;
 	transition: 0.3s;
 	display: block;
@@ -453,6 +478,7 @@ thead {
 
 #hero {
 	text-indent: 111px;
+	
 	/*
 background-image: 
 url('https://us.123rf.com/450wm/sabelskaya/sabelskaya1706/sabelskaya170600340/80246099-young-man-working-as-courier-delivering-goods-parcel-boxes-cartoon-vector-illustration-isolated-on-w.jpg?ver=6'); */
@@ -463,8 +489,7 @@ url('https://us.123rf.com/450wm/sabelskaya/sabelskaya1706/sabelskaya170600340/80
 @media (max-width: 558px) {
 	#hero {
 		text-indent: 51px;
-		background-image: url('https://us.123rf.com/450wm/sabelskaya/sabelskaya1706/sabelskaya170600340/80246099-young-man-working-as-courier-delivering-goods-parcel-boxes-cartoon-vector-illustration-isolated-on-w.jpg?ver=6');
-		background-size: cover;
+	    background-size: cover;
 		height: 200px;
 		background-position: center;
 	}
@@ -525,7 +550,7 @@ footer .footer-bottom {
 
 
 .upperlogin{
-	margin-top: 4%;
+	margin-top: 1%;
 }
 
 
@@ -547,6 +572,11 @@ ul .errlist {
     display: block; 
 }
 
+.disabled{
+	background: #ccc;
+	color: #000;
+}
+
   .spinner-1:before {
     content: "";
     box-sizing: border-box;
@@ -558,9 +588,11 @@ ul .errlist {
     margin-top: -30px;
     margin-left: -30px;
     border-radius: 50%;
-    border: 2px solid transparent;
-    border-top-color: coral;
-    border-bottom-color: coral;
+    border: 8px solid transparent;
+    border-top-color:  rgb(202, 143, 34);
+	border-bottom-color:  rgb(202, 143, 34);
+	border-left-color:  rgb(202, 143, 34);
+	
     animation: spinner 0.7s ease infinite;
   }
   
@@ -676,6 +708,7 @@ ul .errlist {
 
   .btn-green{
 	  background: rgb(137, 196, 137);
+	  margin-top: 20px;
   }
 
   .btn-pink{
@@ -699,7 +732,15 @@ ul .errlist {
   }
 
   .searchResults{
-	  color: #006699 !important;
+	  color: #56455e !important;
 	  text-decoration: underline;
 	  
+  }
+
+  /* Cursor */
+.txt-type > .txt {
+	border-right: 0.2rem solid #777;
+  }
+  .txt-type{
+	  font-size: 17px;
   }

@@ -55,7 +55,7 @@ function searchApp(data) {
                 <tr><a title='view profile and orders' class=searchResults href=profile.html?user=${data.user_id}>
                 <td>${data.user_id}</td>
                 <td>${data.user_email}</td>
-                <td>${data.user_name}</td>
+                <td><b>${data.user_name}</b></td>
                 </tr>
                 </a>
 

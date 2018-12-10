@@ -1,31 +1,4 @@
-if('serviceWorker' in navigator){
-  window.addEventListener('load',()=>{
-   navigator.serviceWorker.register('../trulys_sw.js').then(()=>{
 
-
-   }).catch(err=>console.log(err)
-   );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  })
-}else{
-  console.log('not present');
-  
-}
     try {
         is_user_admin=localStorage.getItem("is_admin");
         
@@ -45,4 +18,17 @@ if(localStorage.getItem('_token')==null){
     } catch (error) {
         
     }
+        let menu=document.querySelector('#menu');
+        let menulink=document.querySelector('nav a#menushow');
+        menulink.addEventListener('click',(e)=>{
+            e.preventDefault();
+            console.log(e);
+            menu.classList.toggle('showing');
+        
+   
+    
+})
+   
 
+
+        

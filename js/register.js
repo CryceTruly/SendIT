@@ -95,7 +95,12 @@ function startSignUp(data) {
             }
 
 
-        }).catch(err=>console.log(err)
+        }).catch((err)=>{
+            
+            console.log(err);
+            display_erors('Cant talk to the server');
+
+        }
         )
 
 }

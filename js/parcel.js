@@ -1,5 +1,15 @@
 const urlParams = new URLSearchParams(window.location.search);
 const current_item=urlParams.get('parcel');
+const msg=urlParams.get("message");
+if(msg){
+    document.querySelector("#msgoutput").innerHTML=`
+    <li>
+        <h4 class="success">${msg}</h4></li>`;
+
+   setTimeout(() => {
+    document.querySelector("#msgoutput").innerHTML=``;
+   }, 4000);
+}
 
 const baseURL="http://127.0.0.1:3000/api/v2/";
 headers=new Headers()
@@ -69,7 +79,7 @@ fetch(baseURL + `parcels/${current_item}`, {
           `
          
         
-          check_user_actions(data.user_id,localStorage.getItem('user_id'));
+          check_user_actions(data.user_id,localStorage.getItem('user_id'),data.status);
           initMap(data.pickuplat_lng,data.destination_latlng,data.pickup_address,data.destination_address);
           
        
@@ -172,7 +182,13 @@ function cancelOrder(status){
    
     
     if(status==='cancelled'){
-        alert('order already cancelled')
+        document.location.href=`details.html?message=order already cancelled&parcel=${current_item}`;
+      
+        return false;
+    }
+    if(status==='delivered'){
+        document.location.href=`details.html?message=order already delivered&parcel=${current_item}`;
+         
         return false;
     }
     let userinput=confirm('are you sure you want to cancel this order?')
@@ -182,9 +198,11 @@ function cancelOrder(status){
         })
             .then(response => response.json())
             .then(jsondata => {
+                console.log(jsondata);
+                
                 document.querySelector("body").classList.remove("spinner-1");     
-                alert('item cancelled')
-                document.location.href='profile.html';
+                document.location.href=`details.html?message=Parcel Cancelled Successfully&parcel=${current_item}`;
+         
     
     
             })
@@ -205,8 +223,16 @@ function deleteOrder(id){
             .then(response => response.json())
             .then(jsondata => {
                 document.querySelector("body").classList.remove("spinner-1");     
-                alert('item deleted')
-                document.location.href='profile.html';
+
+                if(jsondata['parcel_id']){
+                 
+                    document.location.href='profile.html?message=order deleted';
+                }else{
+                    document.location.href=`details.html?message=${jsondata['message']}&parcel=${current_item}`;
+         
+                    
+                }
+               
     
     
             }).catch(err=>console.log(err)
@@ -230,16 +256,28 @@ function printOrder(){
 
     window.print();
 
-    document.body.innerHTML = originalContents;
+    document.location.reload();
 }
 
-function check_user_actions(user,owner){
+function check_user_actions(user,owner,status){
     console.log(owner);
     
     if(user!=owner){
+      
+        document.querySelector(".first").innerHTML=`<hr>
+    Logged in as administrator`;
+    if(status=='order_placed'||status=='in_transit'){
+      
         document.querySelector(".first").innerHTML=`<hr>
     Logged in as administrator
+<br>
+<br>
+    <a class= "button" href=editorder.html?order=${current_item}>Update PresentLocation</a>
     `;
+
+  
+    }
+    
     }
 }
 

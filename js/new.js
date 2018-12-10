@@ -1,6 +1,28 @@
+function initMap(){
+    
+    
+}
+
 if(localStorage.getItem('_token')==null){
     document.location.href='login.html';
  }
+
+
+ function getLocation() {
+     
+    if (navigator.geolocation) {
+     return navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+     console.log(
+     "Geolocation is not supported by this browser.");
+    }
+  }
+  
+  function showPosition(position) {
+    getReverseGeocodingData(position.coords.latitude,position.coords.longitude);
+  }
+
+ 
  const baseURL = "http://127.0.01:3000/api/v2/"
 
 const erroutput = document.querySelector('#errors')
@@ -92,8 +114,7 @@ function createParcel(data) {
             console.log(jsondata);
             
             if (jsondata['status']==="success") {
-                alert('created successfully');
-                document.location.href=`profile.html`
+                document.location.href=`details.html?message=Parcel Created Successfully&parcel=${jsondata['parcel']}`;
             } else {
                 display_erors(jsondata['message'])
                 setTimeout(() => {
@@ -120,4 +141,23 @@ function clear_errors() {
         erroutput.innerHTML = "";
     }, 4000);
 
+}
+
+
+function getReverseGeocodingData(lat, lng) {
+    var latlng = new google.maps.LatLng(lat, lng);
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+        if (status !== google.maps.GeocoderStatus.OK) {
+            alert(status);
+        }
+        if (status == google.maps.GeocoderStatus.OK) {
+            console.log(results);
+            let address = (results[0].formatted_address);
+            document.querySelector('#pickup_address').value=address;
+            return address;
+        }else{
+            document.querySelector('#pickup_address').value="Please Pick and address";
+        }
+    });
 }

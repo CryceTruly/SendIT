@@ -4,6 +4,8 @@ if(localStorage.getItem('_token')!=null){
  const baseURL = "http://127.0.01:3000/api/v2/"
 const erroutput = document.querySelector('#errors')
  const urlParams = new URLSearchParams(window.location.search);
+ 
+let btn = document.querySelector('#login');
  const current_item=urlParams.get('message');
  const status=urlParams.get('status');
  if(status=='success'){
@@ -13,16 +15,17 @@ const erroutput = document.querySelector('#errors')
 if(current_item!=null){
     display_erors(current_item);
 }
-let btn = document.querySelector('#login');
 btn.addEventListener('click', e => {
     errors = []
     let email = document.querySelector('#email').value
     let password = document.querySelector('#password').value
     if (is_valid_email(email) == false) {
         errors.push('email is invalid')
-    if (password.length < 6) {
+
     }
-        errors.push('password should be 6 characters')
+    if (password.length < 6) {
+    
+        errors.push('password should be atleast 6 characters')
     }
 
     if (errors.length > 0) {
@@ -60,6 +63,9 @@ function is_valid_email(email) {
 }
 function startLogin(data) {
     console.log(data);
+    btn.value='Please wait';
+    btn.classList.add('disabled');
+
 
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -68,6 +74,9 @@ function startLogin(data) {
     })
         .then(response => response.json())
         .then(jsondata => {
+            
+    btn.value='Login';
+    btn.classList.remove('disabled');
             document.querySelector("body").classList.remove("spinner-1");
             if (jsondata['auth_token']) {
                 save_user_info(jsondata['auth_token'],jsondata['is_admin'],jsondata['user_id'])

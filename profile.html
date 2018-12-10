@@ -39,11 +39,13 @@
               </header>
               <!-- The main area -->
 <div class="container">
+    <ul id="msgoutput">
+      </ul>
 
 <div class="row">
   <div class="column">
     <div class="test" style="border:1px solid gainsboro;padding:50px;margin:10px 10px;">
-        <h3>My Profile</h3>
+        <h3 id="mp">My Profile</h3>
        <div class="output">
            
     </div>
@@ -51,9 +53,13 @@
    
   </div>
   <div class="column">
-     <h3>Statistics</h3>
-      My Total orders <span class="count2">45</span><br>
-      All delivered <span class="count">45</span>
+    <div style="border:1px solid gainsboro;padding:5px;margin:10px 10px;">
+        <h3>Statistics</h3>
+        Total orders <span class="count2">45</span><br>
+        All delivered <span class="count">45</span><br>
+       Points <span class="count">__</span>
+    </div>
+     
 
       <h3>Latest Orders</h3>
    <div class="orders">
@@ -61,7 +67,7 @@
            <table class="table" border="1">
                <thead>
                    <tr>
-                       <th>Order Number</th>
+                       <th>Order</th>
                        <th>Status</th>
                        <th>Created</th>
                        <th></th>
