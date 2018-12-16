@@ -1,4 +1,4 @@
-const baseURL = "https://trulysendit.herokuapp.com/";
+const baseURL = "http://127.0.0.1:3000/api/v2/";
 headers=new Headers()
 document.querySelector(".test").classList.add("spinner-1");
 headers.append('Content-Type', 'application/json');
@@ -137,7 +137,14 @@ fetch(baseURL +`users/${user}/parcels`, {
           function timeSince(date) {
             var seconds = Math.floor((new Date() - new Date(date)) / 1000);
             var duration = getDuration(seconds);
-            var suffix = (duration.interval > 1 || duration.interval === 0) ? 's' : '';
-            return duration.interval + ' ' + duration.epoch + suffix;
+try {
+    var suffix = (duration.interval > 1 || duration.interval === 0) ? 's' : '';
+                return duration.interval + ' ' + duration.epoch + suffix;
+} catch (error) {
+    return 'seconds';
+}
+                
+            
+            
           };
           

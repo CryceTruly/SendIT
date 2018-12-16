@@ -1,9 +1,11 @@
-const baseURL="https://trulysendit.herokuapp.com/";
+const baseURL="http://127.0.0.1:3000/api/v2/";
 if(localStorage.getItem('_token')==null){
     document.location.href='../login.html?message=you need to log in first';
  }
  if(localStorage.getItem('is_admin')!=='true'){
     document.location.href='../index.html?message=you cannot access that';
+ }else{
+     document.querySelector('#createli').style.display='none';
  }
 document.querySelector("tbody").classList.add("spinner-1");
 headers=new Headers()

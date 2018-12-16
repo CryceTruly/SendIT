@@ -11,7 +11,7 @@ if(msg){
    }, 4000);
 }
  
- const baseURL = "https://trulysendit.herokuapp.com/"
+ const baseURL = "http://127.0.0.1:3000/api/v2/"
 headers=new Headers()
 document.querySelector(".oneleft").classList.add("spinner-1");
 headers.append('Content-Type', 'application/json');
@@ -72,7 +72,7 @@ fetch(baseURL + `parcels/${current_item}`, {
           <div class="column">
              <button class="button btn-green" id=printbtn onclick=printOrder()>Print Order</button>
               <button class="button btn-pink" id=cancelbtn onclick=cancelOrder("${data.status}")>Cancel Order</button>
-              <button class="button btn-red" id=deletebtn onclick=deleteOrder(${data.parcel_id})>Delete Order</button>
+              <button class="button btn-red" id=deletebtn onclick=deleteOrder(${data.status})>Delete Order</button>
               <button class="button btn-info"><a href=changedest.html?parcel=${data.parcel_id}>Edit Destination</a></button>
           </div>
       </div>
@@ -186,6 +186,11 @@ function cancelOrder(status){
       
         return false;
     }
+    if(status==='in_transit'){
+        document.location.href=`details.html?message=order already in transit&parcel=${current_item}`;
+      
+        return false;
+    }
     if(status==='delivered'){
         document.location.href=`details.html?message=order already delivered&parcel=${current_item}`;
          
@@ -214,7 +219,22 @@ function cancelOrder(status){
 }
 
 
-function deleteOrder(id){
+function deleteOrder(status){
+    if(status==='cancelled'){
+        document.location.href=`details.html?message=order already cancelled&parcel=${current_item}`;
+      
+        return false;
+    }
+    if(status==='in_transit'){
+        document.location.href=`details.html?message=order already in transit&parcel=${current_item}`;
+      
+        return false;
+    }
+    if(status==='delivered'){
+        document.location.href=`details.html?message=order already delivered&parcel=${current_item}`;
+         
+        return false;
+    }
     let userinput=confirm('are you sure you want to delete this order?')
     if(userinput){
         fetch(baseURL +`parcels/${current_item}/delete`, {
@@ -272,7 +292,7 @@ function check_user_actions(user,owner,status){
     Logged in as administrator
 <br>
 <br>
-    <a class= "button" href=editorder.html?order=${current_item}>Update PresentLocation</a>
+    <a class= "button" href=editorder.html?order=${current_item}>Update Present Location</a>
     `;
 
   

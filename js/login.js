@@ -1,7 +1,7 @@
 if(localStorage.getItem('_token')!=null){
     document.location.href='index.html';
  }
- const baseURL = "https://trulysendit.herokuapp.com/"
+ const baseURL = "http://127.0.0.1:3000/api/v2/"
 const erroutput = document.querySelector('#errors')
  const urlParams = new URLSearchParams(window.location.search);
  
@@ -80,7 +80,7 @@ function startLogin(data) {
             document.querySelector("body").classList.remove("spinner-1");
             if (jsondata['auth_token']) {
                 save_user_info(jsondata['auth_token'],jsondata['is_admin'],jsondata['user_id'])
-                document.location.href = 'index.html';
+                document.location.href = 'profile.html';
 
             } else {
                 display_erors(jsondata['message'])

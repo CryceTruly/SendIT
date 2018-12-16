@@ -350,7 +350,9 @@ option{
 
 .column {
 	float: left;
-	width: 50%;
+	margin-right: 2%;
+	margin-left: 2%;
+	width: 45%;
 }
 
 /* Clear floats after the columns */
@@ -496,9 +498,10 @@ url('https://us.123rf.com/450wm/sabelskaya/sabelskaya1706/sabelskaya170600340/80
 }
 /* footer */
 footer {
+	display: none;
 	position: relative;
 	background: #7b1fa2;
-	margin-top: 155px;
+	margin-top: 355px;
 }
 
 /* Footer */

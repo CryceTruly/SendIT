@@ -16,12 +16,7 @@
                 <nav class='cf'>
                     <a href='index.html' id='menushow'><i class="fa fa-send"></i> SendIT</a>
                   <ul class='cf' id="menu">
-                    <li id="loginli">
-                      <a href='login.html'>Sign In<i class="fa fa-key"></i></a>
-                    </li>
-                    <li id="registerli">
-                      <a href='register.html'>Register<i class="fa fa-user-md"></i></a>
-                    </li>
+                  
                     <li>
                       <a href='profile.html'>Me<i class="fa fa-circle"></i></a>
                     </li>
@@ -43,56 +38,60 @@
         <div class="upperlogin">
                 <h3>Make an order</h3>
           </div>
-  <div class="loginform">
+  <div class="neworder">
    
 
 
-        <form class="my-form">
+        <form class="my-form row">
+            <ul id="errors"></ul>
           
-               
-                <div class="form-group">
-                    <label for="pickup">Pick Up Location: </label>
-                    <input type="text" name="pul" id="pickup_address">
-                </div>
-                <div class="form-group">
-                    <label for="dest">Destination: </label>
-                    <input type="text" name="dest" id="dest">
-                </div>
-                <div class="form-group">
-                    <label for="gr">Parcel Weight (Kgrams): </label>
-                    <input type="number" name="weight" id="weight">
-                </div>
-
-                <div class="form-group">
-                  <label for="qty">Quantity: </label>
-                  <input type="number" name="qty" id="qty">
-              </div>
-                <div class="form-group">
-                    <label>Parcel Description: </label>
-                    <textarea  name="comments" placeholder="" id="desc"></textarea>
-                </div>
-               <hr>
-               <h3>Recipient Details</h3>
-               <div class="form-group">
-                <label>FullName:*</label>
-                <input type="text" name="rname" id="rname">
+               <div class="column"> <div class="form-group">
+                <label for="pickup">Pick Up Location: </label>
+                <input type="text" name="pul" id="pickup_address">
             </div>
             <div class="form-group">
-              <label>Email:*</label>
-              <input type="email" name="remail" id="remail">
-          </div>
-             
+                <label for="dest">Destination: </label>
+                <input type="text" name="dest" id="dest">
+            </div>
             <div class="form-group">
-              <label>Contact Phone:* </label>
-              <input type="tel" name="rtel" id="rtel">
+                <label for="gr">Parcel Weight (Kgrams): </label>
+                <input type="number" name="weight" id="weight">
+            </div>
+
+            <div class="form-group">
+              <label for="qty">Quantity: </label>
+              <input type="number" name="qty" id="qty">
           </div>
-        
-     
-          <ul id="errors"></ul>
-          <div id="loading"></div>
+            <div class="form-group">
+                <label>Parcel Description: </label>
+                <textarea  name="comments" placeholder="" id="desc"></textarea>
+            </div></div>
                
-                <input class="button signinbtn" type="submit" id="submit" value="Submit Order" name="">
+                <div class="column">
+                  <h3>Recipient Details</h3>
+                  <div class="form-group">
+                   <label>Recipient FullName:*</label>
+                   <input type="text" name="rname" id="rname">
+               </div>
+               <div class="form-group">
+                 <label>Recipient Email:*</label>
+                 <input type="email" name="remail" id="remail">
+             </div>
+                
+               <div class="form-group">
+                 <label>Recipient Contact Phone:* </label>
+                 <input type="tel" name="rtel" id="rtel">
+             </div>
+             <div id="loading"></div>
+               
+             <input class="button signinbtn" type="submit" id="submit" value="Submit Order" name="">
+           </div>
+              
+     
+        
+         
             </form>
+            </div>
     
      
       
