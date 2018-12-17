@@ -52,7 +52,7 @@ function update_destination(location) {
             
            if(jsondata['new_destination']){
             document.querySelector("body").classList.remove("spinner-1");
-            document.location.href=`../details.html?parcel=${current_item}&msg=Destination Updated`
+            document.location.href=`../details.html?parcel=${current_item}&message=Destination Updated`
 
            }else{
             document.querySelector("body").classList.remove("spinner-1");
