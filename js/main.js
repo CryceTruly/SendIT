@@ -6,6 +6,7 @@ if(is_user_admin!='true'){
     document.querySelector("#is_admin").style.display='none';
 }else{
     document.querySelector("#createli").style.display='none';
+    document.querySelector(".createli").style.display='none';
 }
 
 
