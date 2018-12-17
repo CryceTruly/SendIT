@@ -747,3 +747,7 @@ ul .errlist {
   .txt-type{
 	  font-size: 17px;
   }
+
+  .neworder,.newform{
+	  border: 1px solid gainsboro;
+  }
