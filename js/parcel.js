@@ -289,7 +289,7 @@ function check_user_actions(user,owner,status){
       
         document.querySelector(".first").innerHTML=`<hr>
     Logged in as administrator`;
-    if(status=='order_placed'||status=='in_transit'){
+    if(status==='order_placed'||status==='in_transit'){
       
         document.querySelector(".first").innerHTML=`<hr>
     Logged in as administrator

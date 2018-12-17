@@ -73,18 +73,19 @@ function is_valid_email(email) {
 function startSignUp(data) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin','*');
-headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept')
     fetch(baseURL + "auth/signup", {
-        method: "POST", body: JSON.stringify(data), headers: headers,mode:'no-cors'
-    })
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: headers
+    }
+    
+    )
         .then(response => 
             response.json()
             ).catch(err=>console.log(err)            )
         .then(jsondata => {
             document.querySelector("body").classList.remove("spinner-1");
             console.log(jsondata);
-            
             if (jsondata['status']==='Success') {
                 
                 document.location.href=`login.html?message=${encodeURIComponent(jsondata['message'])} &status=success`
@@ -95,6 +96,7 @@ headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-T
                 }, 1000);
                 clear_errors()
             }
+         
 
 
         }).catch((err)=>{
