@@ -4,7 +4,7 @@ if(localStorage.getItem('_token')==null){
  if(localStorage.getItem('is_admin')!=='true'){
     document.location.href='../index.html?message=you cannot access that';
  }
- const baseURL = "https://trulysendit.herokuapp.com/";
+ const baseURL = "https://trulysendit.herokuapp.com/api/v2/";
 
 document.querySelector("#userinput").addEventListener('keyup',(e)=>{
     v=e.target.value.trim();

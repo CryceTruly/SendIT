@@ -1,7 +1,7 @@
 if(localStorage.getItem('_token')!=null){
     document.location.href='index.html';
  }
- const baseURL = "https://trulysendit.herokuapp.com/"
+ const baseURL = "https://trulysendit.herokuapp.com/api/v2/";
 const erroutput = document.querySelector('#errors')
  const urlParams = new URLSearchParams(window.location.search);
  

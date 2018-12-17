@@ -1,4 +1,4 @@
-const baseURL = "https://trulysendit.herokuapp.com/";
+const baseURL = "https://trulysendit.herokuapp.com/api/v2/";
 headers=new Headers()
 document.querySelector(".test").classList.add("spinner-1");
 headers.append('Content-Type', 'application/json');
