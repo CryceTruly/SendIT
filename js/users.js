@@ -8,6 +8,9 @@ if(localStorage.getItem('_token')==null){
 document.querySelector("tbody").classList.add("spinner-1");
 headers=new Headers()
 headers.append('Content-Type', 'application/json');
+headers.append('Access-Control-Allow-Origin','*');
+headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept')
+
 headers.append('authorization','Bearer '+localStorage.getItem('_token'));
 allparcels = null;
 fetch(baseURL + "users", {

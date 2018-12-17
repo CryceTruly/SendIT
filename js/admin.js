@@ -11,6 +11,8 @@ document.querySelector("tbody").classList.add("spinner-1");
 headers=new Headers()
 headers.append('Content-Type', 'application/json');
 headers.append('authorization','Bearer '+localStorage.getItem('_token'));
+headers.append('Access-Control-Allow-Origin','*');
+headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept');
 allparcels = null;
 fetch(baseURL + "parcels", {
     method: "GET", headers: headers

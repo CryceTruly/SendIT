@@ -41,6 +41,8 @@ function update_destination(location) {
     let headers = new Headers();
     headers.append('authorization','Bearer '+localStorage.getItem('_token'))
     headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin','*');
+    headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept');
     fetch(baseURL +`parcels/${current_item}/destination`, {
         method: "PUT", body: JSON.stringify({'destination_address':location}), headers: headers,mode:'cors'
     })

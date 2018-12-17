@@ -34,6 +34,8 @@ function searchApp(data) {
     
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin','*');
+headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept');
     headers.append('Authorization','Bearer '+localStorage.getItem('_token'))
     fetch(baseURL + "search/", {
         method: "POST",body: JSON.stringify(q), headers: headers

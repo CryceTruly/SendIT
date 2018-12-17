@@ -15,7 +15,9 @@ if(msg){
 headers=new Headers()
 document.querySelector(".oneleft").classList.add("spinner-1");
 headers.append('Content-Type', 'application/json');
-headers.append('authorization','Bearer '+localStorage.getItem('_token'))
+headers.append('authorization','Bearer '+localStorage.getItem('_token'));
+headers.append('Access-Control-Allow-Origin','*');
+headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept');
 fetch(baseURL + `parcels/${current_item}`, {
     method: "GET", headers: headers
 })

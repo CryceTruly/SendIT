@@ -73,8 +73,10 @@ function is_valid_email(email) {
 function startSignUp(data) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin','*');
+headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept')
     fetch(baseURL + "auth/signup", {
-        method: "POST", body: JSON.stringify(data), headers: headers
+        method: "POST", body: JSON.stringify(data), headers: headers,mode:'no-cors'
     })
         .then(response => 
             response.json()

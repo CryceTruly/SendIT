@@ -101,7 +101,9 @@ function is_valid_email(pickup_address) {
 function createParcel(data) {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    headers.append('Authorization','Bearer '+localStorage.getItem('_token'))
+    headers.append('Authorization','Bearer '+localStorage.getItem('_token'));
+    headers.append('Access-Control-Allow-Origin','*');
+headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept');
     fetch(baseURL + "parcels", {
         method: "POST",body: JSON.stringify(data), headers: headers
     })

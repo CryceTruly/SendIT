@@ -43,6 +43,8 @@ function update_presentLocation(location,status) {
     let headers = new Headers();
     headers.append('authorization','Bearer '+localStorage.getItem('_token'))
     headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin','*');
+    headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept');
     fetch(baseURL + `parcels/${current_item}/status`, {
         method: "PUT", body: JSON.stringify({'status':status}), headers: headers
     }).then(res=>res.json).then(function(data){

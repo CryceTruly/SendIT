@@ -69,6 +69,8 @@ function startLogin(data) {
 
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin','*');
+    headers.append('Access-Control-Allow-Headers','Origin,X-Requested-With,Content-Type,Accept')
     fetch(baseURL + "auth/login", {
         method: "POST", body: JSON.stringify(data), headers: headers
     })
