@@ -1,4 +1,4 @@
-const baseURL = "http://127.0.0.1:3000/api/v2/"
+const baseURL = "https://trulysendit.herokuapp.com/"
 const erroutput = document.querySelector('#errors')
 const urlParams = new URLSearchParams(window.location.search);
 const current_item=urlParams.get('order')

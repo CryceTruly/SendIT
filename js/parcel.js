@@ -11,7 +11,7 @@ if(msg){
    }, 4000);
 }
  
- const baseURL = "http://127.0.0.1:3000/api/v2/"
+ const baseURL = "https://trulysendit.herokuapp.com/";
 headers=new Headers()
 document.querySelector(".oneleft").classList.add("spinner-1");
 headers.append('Content-Type', 'application/json');
