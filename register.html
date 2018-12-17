@@ -30,43 +30,46 @@
                 <img src="img/logo.png" height="70" alt="" srcset="">
                 <h3>Create an Account</h3>
             </div>
-  <div class="loginform">
+  <div class="newform">
 
-
-        <form class="my-form">
-           
-                <div class="form-group">
-                    <label for="fullname">FullName:* </label>
-                    <input type="text" name="fullname" id="fullname">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email:* </label>
-                    <input type="email" name="email" id="email">
-                </div>
+        <ul id="errors"></ul>
+        <form class="my-form row">
+           <div class="column"> <div class="form-group">
+                <label for="fullname">FullName:* </label>
+                <input type="text" name="fullname" id="fullname">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:* </label>
+                <input type="email" name="email" id="email">
+            </div>
+          
+            <div class="form-group">
+                <label for="username">UserName:*</label>
+                <input type="text" name="username" id="username">
+            </div>
+             </div>
+             <div class="column">
+                    <div class="form-group">
+                            <label for="phone">Contact Phone:* </label>
+                            <input type="tel" name="tel" id="phone">
+                        </div>
+                          <div class="form-group">
+                              <label for="password">Password:* </label>
+                              <input type="password" name="password" id="password">
+                          </div>
+                          <div class="form-group">
+                              <label for="p2">Confirm Password: </label>
+                              <input type="password" name="password" id="p2">
+                          </div
+                          >
+                        
+                          <input class="button signinbtn"  type="submit" value="Register" id="register">
+                          <a class="new" href="login.html">Existing users,Please Login</a>
               
-                <div class="form-group">
-                    <label for="username">UserName:*</label>
-                    <input type="text" name="username" id="username">
-                </div>
-                 
-                <div class="form-group">
-                  <label for="phone">Contact Phone:* </label>
-                  <input type="tel" name="tel" id="phone">
-              </div>
-                <div class="form-group">
-                    <label for="password">Password:* </label>
-                    <input type="password" name="password" id="password">
-                </div>
-                <div class="form-group">
-                    <label for="p2">Confirm Password: </label>
-                    <input type="password" name="password" id="p2">
-                </div
-                >
-                <ul id="errors"></ul>
-                <input class="button signinbtn"  type="submit" value="Register" id="register">
-                <a class="new" href="login.html">Existing users,Please Login</a>
-    
+             </div>
+               
+               
             </form>
             
      
