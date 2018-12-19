@@ -87,7 +87,7 @@ function startLogin(data) {
                 save_user_info(jsondata['auth_token'], jsondata['is_admin'], jsondata['user_id']);
                 is_admin=jsondata['is_admin'];
                 if(is_admin==true){
-                    document.location.href = '/admin';
+                    document.location.href = 'admin/index.html';
                 }else{
                     document.location.href = 'profile.html';
                 }
